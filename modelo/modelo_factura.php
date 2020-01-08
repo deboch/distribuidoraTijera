@@ -83,15 +83,17 @@ function getBusqueda($codigo, $letra){
 	return $articulos;
 }
 function listar($codigo,$tipo,$descripcion,$precio){
+				
 				$conn = getConexion();
-				$sql = "INSERT INTO 'tmp' (id, tipo, descripcion, precio) VALUES ('$codigo, '$tipo', '$descripcion', '$precio')";
+				$sql = "INSERT INTO tmp (id, tipo, descripcion, precio) VALUES ('$codigo', '$tipo', '$descripcion', '$precio')";
 				$insert = mysqli_query($conn, $sql);
 				
 				$sql2 = "SELECT id, tipo, descripcion, precio from tmp";
 				$result = mysqli_query($conn, $sql2);
+				$listas=Array();
 				if(mysqli_num_rows($result) > 0){
 				while ($row = mysqli_fetch_assoc($result)) {
-					$listas=Array();
+					
 					$lista['id'] = $row['id'];
 					$lista['tipo']= $row['tipo'];
 					$lista['descripcion'] = $row['descripcion'];
