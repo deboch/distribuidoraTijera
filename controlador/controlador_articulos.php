@@ -1,14 +1,13 @@
 <?php
 include("../modelo/modelo_articulos.php");
 $articulos=getlistaArticulos();
-if(isset($_GET["submit"])){
+if(isset($_GET["cod_art"])){
     $codigo=$_GET['cod_art'];
-    
+    $articulos="";
     if($codigo!=0){
         $articulos=getArticulo($codigo);
-        
-        
     }else{
-        echo "elegir un articulo";
-    }include("../vista/listaDePrecios.php");
+        $articulos=getlistaArticulos();
+    }
+	include("../vista/articulos.php");
 }

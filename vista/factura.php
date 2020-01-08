@@ -3,7 +3,19 @@
 <html>
 <?php
 include("../head.php");
+include("../controlador/controlador_factura2.php");
+
+
+
 ?>
+
+<script type="text/javascript">
+	/* function buscar(){
+		var tipo_art=document.getElementById('tipo_art').value;
+		var codigo=document.getElementById('codigo').value;
+		window.location.href = 'http://localhost:8080/distribuidora/vista/factura.php?codigo='+codigo;
+	} */
+</script>
 <body>
 
 	<div class="container">
@@ -44,59 +56,110 @@ include("../head.php");
 		<br>
 		<div class="row">
 			<div class="col-md-12">
-				<button type="button" class="btn btn-success float-right" id="add" onclick="agregarFila()">Agregar artículo</button>
+				<div class="separador"></div>
 			</div>
 		</div>
-		<table class="table table-striped" id="mitabla">
-		  <thead>
-			<tr>
-			  <th scope="col">Articulo</th>
-			  <th scope="col">Tipo</th>
-			  <th scope="col">Cantidad</th>
-			  <th scope="col">Descripción</th>
-			  <th scope="col">Precio Unit.</th>
-			  <th scope="col">Total</th>
-			  <th scope="col"></th>
-			</tr>
-		  </thead>
-		  <tbody>
-			<tr>
-			  <td scope="row"><input class="form-control" type="text" maxlength="6"></td>
-			  <td>
-				  <select class="form-control">
-					  <option value="0">G</option>
-					  <option value="1">S</option>
-					  <option value="2">B</option>
-					  <option value="3">V</option>
-				  </select>
-			  </td>
-			  <td>
-				<input class="form-control" type="number" min="1">
-			  </td>
-			  <td>
-				<input class="form-control" type="text">
-			  </td>
-			  <td>
-				<input class="form-control" type="text" placeholder="$">
-			  </td>
-			  <td>
-				<input class="form-control" type="text" placeholder="$">
-			  </td>
-			  <td><a href="" >Eliminar</a></td>
-			</tr>
-		  </tbody>
+		<br>
+		<form method="get" action="../controlador/controlador_factura.php">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+					</div>
+					<div class="col-md-4">		
+							<div class="row">
+								<div class="col-md-6">
+									<input class="form-control" type="text" placeholder="Ingrese artículo" id="cod_art" name="cod_art">    
+								</div>
+								<div class="col-md-3">
+									<select class="form-control" id="tipo" name="tipo">
+									<option value="G">G</option>
+									<option value="S">S</option>
+									<option value="B">B</option>
+									<option value="V">V</option>
+									</select>   
+								</div>
+								<div class="col-md-3">
+								<button class="btn btn-primary" type="submit" onclick="visualizarCampos()">Buscar</button>
+								</div>
+							</div> 
+					</div>
+					<div class="col-md-4">
+					</div>
+				</div>
+		</form>
+		<form method="POST" action="../controlador/controlador_factura2.php">
+				<br>
+				<?php
+                    foreach($articulos as $articulo){
+					echo" <div class='row'>
+						<div class='col-md-1'>
+						<label class='' id='codigo'>Artículo</label><input class='form-control' type='text' name='codigo' value='".$articulo['codigo']."'  >
+						</div>
+						<div class='col-md-1'>
+						<label class='' id='tipo'>Tipo</label><input class='form-control' type='text' name='tipo' value='".$articulo['tipo']."'  >
+						</div>
+						<div class='col-md-6'>
+						<label class='' id='descripcion'>Descripción</label><input class='form-control' name='descripcion' type='text' value='".$articulo['descripcion']."' >
+						</div>
+						<div class='col-md-1'>
+						<label class='' id='precio' >Precio</label><input class='form-control' type='text' name='precio' value='".$articulo['precio']."' >	
+						</div>
+						<div class='col-md-2'>
+							<br>
+							<button type='submit' class='btn btn-info' style='margin-top: 8px'>Agregar</button>
+						</div>
+					</div>";
+					}
+
+					?>
+			</div>
+		</form>
 		
 		<br>
-		</table>
-		<div>
-			<button type="button" class="btn btn-success float-right agregar">Imprimir</button> 
-			<button type="button" class="btn btn-success float-right agregar">Descargar</button> 
-		</div>
+		
+				<table class="table table-striped" id="mitabla">
+				<thead>
+					<tr>
+					<th scope="col">Articulo</th>
+					<th scope="col">Tipo</th>
+					<th scope="col">Cantidad</th>
+					<th scope="col">Descripción</th>
+					<th scope="col">Precio Unit.</th>
+					<th scope="col">Total</th>
+					<th scope="col"></th>
+					</tr>
+				</thead>
+				<form class="form-horizontal" role="form" id="datos_factura" method="post">
+					<tbody>
+						<?php
+						foreach($listas as $lista){
+							echo "<tr>
+								 <td>".$lista['id']."</td>                             
+								 <td>".$lista['tipo']."</td>
+								 <td>0</td>
+								 <td>".$lista['descripcion']."</td>
+								 <td>".$lista['precio']."</td>
+								 <td>0</td>  
+								 <td><a href=''>Eliminar</a></td>                         
+							 </tr>";
+						}
+						?>
+					</tbody>
+				
+				<br></form>
+				
+				</table>
+			
+				<br><br><br><br><br><br>
+				<div>
+					<button type="button" class="btn btn-success float-right agregar">Imprimir</button> 
+					<button type="button" class="btn btn-success float-right agregar" name="submit">Descargar</button> 
+				</div>
+		
 	</div>
 </body>
 <footer></footer>
-<script>
 
+	
 
-</script>
 </html>

@@ -1,6 +1,6 @@
 <?php
 
-include("../controlador/controlador_articulos.php");
+include_once("../controlador/controlador_articulos.php");
 
 ?>
 <!DOCTYPE html>
@@ -28,19 +28,18 @@ include("../head.php");
     <div class="card shadow mb-4">
         <div class="card-body">
             <div class="card-header py-3">
-                <form method="get" action="../controlador/controlador_lista.php">
+                <form method="get" action="../controlador/controlador_articulos.php">
                     <div class="row">
-                        <div class="col-6">
-                            <div class="form-group">
-                                <label>Articulo</label>
-                                <input class="form-control col-4" type="text" placeholder="Ingrese articulo" id="cod_art" name="cod_art">
-                            </div>
+						<div class="col-md-2">
+                            <input class="form-control" type="text" placeholder="Articulo" id="cod_art" name="cod_art">    
                         </div>
+						<div class="col-md-3">
+                        <button class="btn btn-primary" type="submit">Buscar</button>
+						</div>
+                    </div>
                         
                     </div>
-                    <div class="row">
-                        <button class="btn btn-primary col-2 offset-5" name="submit" type="submit">Buscar</button>
-                    </div>
+                    
                 </form>
         </div>
     </div>
@@ -48,7 +47,7 @@ include("../head.php");
    
 
     <div class="table-responsive">
-		<button type="button" class="btn btn-success float-right agregar">Agregar</button>
+			
             <table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                 <tr>
@@ -65,14 +64,14 @@ include("../head.php");
                 </thead>
                 <tbody>
                 <?php
-                    foreach ($articulos as $articulo){
+                    foreach($articulos as $articulo){
                         echo "<tr>
                              <td>".$articulo['codigo']."</td>                             
                              <td>".$articulo['descripcion']."</td>
                              <td>".$articulo['eje']."</td>
-                             <td>".$articulo['aloj.']."</td>
-                             <td>".$articulo['esp.']."</td>
-                             <td>".$articulo['form.']."</td>  
+                             <td>".$articulo['aloj']."</td>
+                             <td>".$articulo['esp']."</td>
+                             <td>".$articulo['form']."</td>  
                              <td>".$articulo['giro']."</td>
                              <td><a href=''></a></td>
                              <td><a href=''></a></td>                           

@@ -1,5 +1,7 @@
 <?php
-include("../controlador/controlador_lista.php");
+
+	include_once("../controlador/controlador_precio.php");
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -8,24 +10,25 @@ include("../head.php");
 ?>
 <body>
 <div class="container">
-    <h2>Distribuidora Tijera</h2>
+		<?php
+			include("../header.php");
+		?>
     <h4>Lista</h4>
     <div class="card shadow mb-4">
         <div class="card-body">
             <div class="card-header py-3">
-                <form method="get" action="../controlador/controlador_lista.php">
+                <form method="get" action="../controlador/controlador_precio.php">
                     <div class="row">
-                        <div class="col-6">
-                            <div class="form-group">
-                                <label>Articulo</label>
-                                <input class="form-control col-4" type="text" placeholder="Ingrese articulo" id="cod_art" name="cod_art">
-                            </div>
+						<div class="col-md-2">
+                            <input class="form-control" type="text" placeholder="Articulo" id="cod_art" name="cod_art">    
                         </div>
+						<div class="col-md-3">
+							<button class="btn btn-primary" type="submit">Buscar</button>
+						</div>
+                    </div>
                         
                     </div>
-                    <div class="row">
-                        <button class="btn btn-primary col-2 offset-5" name="submit" type="submit">Buscar</button>
-                    </div>
+                    
                 </form>
         </div>
     </div>
@@ -55,7 +58,7 @@ include("../head.php");
                              <td>".$articulo['S']."</td>
                              <td>".$articulo['B']."</td>
                              <td>".$articulo['V']."</td>
-                             <td><a href=''>Modificar</a></td>
+                             <td><a href='#popup'>Modificar</a></td>
                              <td><a href=''>Eliminar</a></td>                         
                          </tr>";
                     }
@@ -64,6 +67,31 @@ include("../head.php");
             </table>
 		</div>
 		</div>
-		</div></body>
+		</div>
+		<div class="overlay">
+			<div class="popup">
+				<form action="">
+				<div class="container">
+					<div class="row">
+					<div class="col-md-4">
+						<label>Articulo</label>
+						<input class="form-control" type="text" name="codigo" id="codigo">
+						<label>Descripcion</label>
+						<input class="form-control" type="text" name="descripcion" id="descripcion">
+						<label>tipo G</label>
+						<input class="form-control" type="text" name="g" id="g">
+						<label>tipo S</label>
+						<input class="form-control" type="text" name="s" id="s">
+						<label>tipo B</label>
+						<input class="form-control" type="text" name="b" id="b">
+						<label>tipo V</label>
+						<input class="form-control" type="text" name="v" id="v">
+						<button>Modificar</button>
+					</div>
+					</div>
+				</div>
+				</form>
+		</div>
+</body>
 <footer></footer>
 </html>
