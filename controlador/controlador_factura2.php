@@ -1,6 +1,6 @@
 <?php
 include_once("../modelo/modelo_factura.php");
-$listas=[];
+//$listas=[];
 if(isset($_POST["codigo"])){
 	if(isset($_POST["tipo"])){
 		if(isset($_POST["descripcion"])){
@@ -15,5 +15,5 @@ if(isset($_POST["codigo"])){
 		}
 	}
 }
-include("../vista/factura.php");
+include_once("../vista/factura.php");
 
