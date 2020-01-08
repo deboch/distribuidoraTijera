@@ -1,6 +1,7 @@
 <?php
 include_once("../modelo/modelo_factura.php");
-//$listas=[];
+//vaciarTMP();
+$listas=[];
 if(isset($_POST["codigo"])){
 	if(isset($_POST["tipo"])){
 		if(isset($_POST["descripcion"])){

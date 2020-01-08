@@ -82,6 +82,7 @@ function getBusqueda($codigo, $letra){
 	 
 	return $articulos;
 }
+
 function listar($codigo,$tipo,$descripcion,$precio){
 				
 				$conn = getConexion();
