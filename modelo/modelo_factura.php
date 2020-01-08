@@ -84,7 +84,7 @@ function getBusqueda($codigo, $letra){
 }
 function listar($codigo,$tipo,$descripcion,$precio){
 				$conn = getConexion();
-				$sql = "INSERT INTO 'tmp' (id, tipo, descripcion, precio) VALUES ('$codigo, '$tipo', '$descripcion', '$precio')";
+				$sql = "INSERT INTO tmp (id, tipo, descripcion, precio) VALUES ('$codigo','$tipo','$descripcion','$precio')";
 				$insert = mysqli_query($conn, $sql);
 				
 				$sql2 = "SELECT id, tipo, descripcion, precio from tmp";

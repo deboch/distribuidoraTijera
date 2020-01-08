@@ -1,6 +1,6 @@
 <?php
 include_once("../modelo/modelo_factura.php");
-//$listas=[];
+$listas=[];
 if(isset($_POST["codigo"])){
 	if(isset($_POST["tipo"])){
 		if(isset($_POST["descripcion"])){
@@ -10,7 +10,7 @@ if(isset($_POST["codigo"])){
 				$descripcion=$_POST["descripcion"];
 				$precio=$_POST["precio"];
 				$listas= listar($cod_agregar,$tipo,$descripcion,$precio);
-				
+				$articulos = [];
 			}
 		}
 	}

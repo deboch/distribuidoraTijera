@@ -1,6 +1,6 @@
 <?php 
 include("../modelo/modelo_factura.php");
-
+$articulos = [];
 if(isset($_GET["cod_art"])){
 	if(isset($_GET["tipo"])){
     $codigo = $_GET['cod_art'];
