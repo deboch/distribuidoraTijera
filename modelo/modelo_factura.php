@@ -92,9 +92,11 @@ function listar_factura(){
 				$sql2 = "SELECT DISTINCT id, tipo, descripcion, precio, cantidad from tmp";
 				$result = mysqli_query($conn, $sql2);
 				$listas=Array();
+				
 				if(mysqli_num_rows($result) > 0){
 					while ($row = mysqli_fetch_assoc($result)) {
-						
+						$lista=Array();
+						$lista['suma_total']=0;
 						$lista['id'] = $row['id'];
 						$lista['tipo']= $row['tipo'];
 						$lista['descripcion'] = $row['descripcion'];
@@ -118,9 +120,8 @@ function agregar($codigo, $tipo, $descripcion,$precio, $cantidad){
 }
 function eliminar_art($accion){
 	$conn = getConexion();
-	$sql = "DELETE FROM tmp WHERE id='$accion';";
+	$sql = "DELETE FROM tmp WHERE id='$accion'";
 	$delete = mysqli_query($conn, $sql);
-	$listas = listar_factura();
 	if($delete){
         echo "<script>alert('Se ha cancelado el pago de su reserva.'); window.location.href='../vista/factura.php?';</script>";
     }

@@ -15,6 +15,13 @@ error_reporting(0);
 		var codigo=document.getElementById('codigo').value;
 		window.location.href = 'http://localhost:8080/distribuidora/vista/factura.php?codigo='+codigo;
 	} */
+	function duplicar(){
+
+document.getElementById("cliente2").value = document.getElementById("cliente").value;
+document.getElementById("telefono2").value = document.getElementById("telefono").value;
+document.getElementById("fecha2").value = document.getElementById("fecha").value;
+
+}
 </script>
 <body>
 
@@ -25,7 +32,7 @@ error_reporting(0);
 		<br><br>
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Factura<h2>
+				<h2>Agregar articulos a factura<h2>
 			</div>
 		</div>
 		<div class="row">
@@ -34,26 +41,7 @@ error_reporting(0);
 			</div>
 		</div>	
 		<br><br>	
-		<div class="row">
-			<div class="col-md-12">
-				<div class="row">
-					<div class="col-md-4">
-						<label class="form-control">Cliente</label>
-						<input class="form-control" type="text" placeholder="Ingrese cliente">
-					</div>
-					<div class="col-md-4">   
-						<label class="form-control">Teléfono</label>
-						<input class="form-control" type="text" placeholder="Ingrese teléfono">
-					</div>
-					<div class="col-md-4">
-						<label class="form-control">Fecha</label>
-						<input class="form-control" type="date" placeholder="Ingrese fecha">
-					</div>
-				</div>
-						  
-			</div> 
-		</div>
-		<br>
+		
 		<div class="row">
 			<div class="col-md-12">
 				<div class="separador"></div>
@@ -159,14 +147,45 @@ error_reporting(0);
 					?>	
 				<br><br><br><br><br><br>
 				<div>
-					<button type="button" class="btn btn-success float-right agregar">Imprimir</button> 
-					<button type="button" class="btn btn-success float-right agregar" name="submit">Descargar</button> 
+				<form action="../vista/imprimirFactura.php" method="GET">
+					<input class="form-control" type="text" hidden="hidden" id="cliente2" name="cliente2">
+					<input class="form-control" type="text" hidden="hidden" id="telefono2" name="telefono2">
+					<input class="form-control" type="date" hidden="hidden" id="fecha2" name="fecha2">
+					<button class="btn btn-success float-right agregar" type="submit">Siguiente</a>
+				</form>
 				</div>
 		
 	</div>
 </body>
 <footer></footer>
-
+<script>
+    function crearPdf() {
+        var pdf = new jsPDF('p', 'pt', 'letter');
+        source = $('#aImprimir')[0];
+        specialElementHandlers = {
+            '#bypassme': function (element, renderer) {
+                return true
+            }
+        };
+        margins = {
+            top: 80,
+            bottom: 0,
+            left:10,
+            width: 10
+        };
+        pdf.fromHTML(
+            source,
+            margins.left, // x coord
+            margins.top, { // y coord
+                'width': margins.width,
+                'elementHandlers': specialElementHandlers
+            },
+            function (dispose) {
+                pdf.save('facturaDistribuidoraT.pdf');
+            }, margins
+        );
+    }
+</script>
 	
 
 </html>

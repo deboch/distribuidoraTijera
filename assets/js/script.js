@@ -11,3 +11,5 @@ function eliminarFila(){
   else
     table.deleteRow(rowCount -1);
 }
+
+ 
