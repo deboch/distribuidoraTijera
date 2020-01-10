@@ -80,6 +80,7 @@ include("../head.php");
                 ?>
                 </tbody>
             </table>
+            
  </div> 
  </div>
  </div>

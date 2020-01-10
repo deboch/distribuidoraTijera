@@ -6,7 +6,7 @@ include_once("../head.php");
 
 <body>
 
-	<div class="container">
+	<div class="container" id="aImprimir">
 		
 		<br><br>
 		<div class="row">
@@ -19,8 +19,9 @@ include_once("../head.php");
 				<div class="separador"></div>
 			</div>
 		</div>	
-		<br><br>	
-		<div class="row">
+		<br><br>
+        
+		<div class="row" >
 			<div class="col-md-12">
 				<div class="row">
 					<div class="col-md-4">
@@ -77,7 +78,7 @@ include_once("../head.php");
                             } else {
                                 $listas=[];
                             }
-                            
+                            $total=0;
                             foreach($listas as $lista){
                                 echo "<tr>
                                     <td>".$lista['id']."</td>                             
@@ -92,8 +93,43 @@ include_once("../head.php");
 						?>
 					</tbody>
 				
-				<br></form>
+				<br>
 				
 				</table>
+                    <?php
+					    echo "<label class='' id='precio' >Total</label><input class='form-control' type='text' name='precio' value='".$total."' readOnly>";	
+					?>	
+				<br><br><br><br><br><br>
+                <button class="btn btn-success float-right agregar"><a href="javascript:crearPdf()" style="color:white!important">Descargar</a></button>
+                </form>
         </body>
+<script>
+    function crearPdf() {
+        var pdf = new jsPDF('p', 'pt', 'letter');
+        source = $('#aImprimir')[0];
+        specialElementHandlers = {
+            '#bypassme': function (element, renderer) {
+                return true
+            }
+        };
+        margins = {
+            top: 80,
+            bottom: 0,
+            left:10,
+            width: 10
+        };
+        pdf.fromHTML(
+            source,
+            margins.left, // x coord
+            margins.top, { // y coord
+                'width': margins.width,
+                'elementHandlers': specialElementHandlers
+            },
+            function (dispose) {
+                pdf.save('factura.pdf');
+            }, margins
+        );
+    }
+</script>
+
         </html>

@@ -147,12 +147,9 @@ document.getElementById("fecha2").value = document.getElementById("fecha").value
 					?>	
 				<br><br><br><br><br><br>
 				<div>
-				<form action="../vista/imprimirFactura.php" method="GET">
-					<input class="form-control" type="text" hidden="hidden" id="cliente2" name="cliente2">
-					<input class="form-control" type="text" hidden="hidden" id="telefono2" name="telefono2">
-					<input class="form-control" type="date" hidden="hidden" id="fecha2" name="fecha2">
-					<button class="btn btn-success float-right agregar" type="submit">Siguiente</a>
-				</form>
+				
+					<button class="btn btn-success float-right agregar" type="submit"><a href="../vista/imprimirFactura.php">Siguiente</a></button>
+				
 				</div>
 		
 	</div>

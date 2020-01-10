@@ -58,7 +58,7 @@ include("../head.php");
                              <td>".$articulo['S']."</td>
                              <td>".$articulo['B']."</td>
                              <td>".$articulo['V']."</td>
-                             <td><a href='#popup'>Modificar</a></td>
+                             <td><a href='modificarArticulo.php?codigo=".$articulo['codigo']."/descripcion=".$articulo['descripcion']."/G=".$articulo['G']."/S=".$articulo['S']."/B=".$articulo['B']."/V=".$articulo['V']."'>Modificar</a></td>
                              <td><a href=''>Eliminar</a></td>                         
                          </tr>";
                     }
@@ -68,30 +68,7 @@ include("../head.php");
 		</div>
 		</div>
 		</div>
-		<div class="overlay">
-			<div class="popup">
-				<form action="">
-				<div class="container">
-					<div class="row">
-					<div class="col-md-4">
-						<label>Articulo</label>
-						<input class="form-control" type="text" name="codigo" id="codigo">
-						<label>Descripcion</label>
-						<input class="form-control" type="text" name="descripcion" id="descripcion">
-						<label>tipo G</label>
-						<input class="form-control" type="text" name="g" id="g">
-						<label>tipo S</label>
-						<input class="form-control" type="text" name="s" id="s">
-						<label>tipo B</label>
-						<input class="form-control" type="text" name="b" id="b">
-						<label>tipo V</label>
-						<input class="form-control" type="text" name="v" id="v">
-						<button>Modificar</button>
-					</div>
-					</div>
-				</div>
-				</form>
-		</div>
+		
 </body>
 <footer></footer>
 </html>

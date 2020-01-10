@@ -3,7 +3,8 @@
 	<link rel="stylesheet" href="../assets/css/style.css">
 	<script src="../assets/js/script.js"></script>
     <!-- CUSTOM STYLE CSS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+	<script type="text/javascript" src="../reportesPDF/js/loader.js"></script>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-
-	
 </head>
