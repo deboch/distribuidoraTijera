@@ -8,7 +8,7 @@ require_once("conexion.php");
 	error_reporting(0);
 ?>
 
-}
+
 <head>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link rel="stylesheet" href="assets/css/style.css">
@@ -16,7 +16,7 @@ require_once("conexion.php");
 <body id="cuerpo">
 <div class="container">
 <header>
-	<h1 class="titulo">Bienvenido Distribuidora Tijera</h1>
+	<h1 class="titulo">Bienvenido Distribuidora T</h1>
 </header>
 
     

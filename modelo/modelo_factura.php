@@ -29,9 +29,9 @@ function getBusqueda($codigo, $letra){
 				if(mysqli_num_rows($result) > 0){
 				while ($row = mysqli_fetch_assoc($result)) {
 					$articulo=Array();
-					$articulo['codigo'] = $row['a.codigo'];
+					$articulo['codigo'] = $row['cod'];
 					$articulo['tipo']=$letra;
-					$articulo['descripcion'] = $row['a.descripcion'];
+					$articulo['descripcion'] = $row['des'];
 					$articulo['precio'] = $row['tipo'];
 					$articulos[]=$articulo;
 				}
@@ -47,9 +47,9 @@ function getBusqueda($codigo, $letra){
 				if(mysqli_num_rows($result) > 0){
 				while ($row = mysqli_fetch_assoc($result)) {
 					$articulo=Array();
-					$articulo['codigo'] = $row['a.codigo'];
+					$articulo['codigo'] = $row['cod'];
 					$articulo['tipo']=$letra;
-					$articulo['descripcion'] = $row['a.descripcion'];
+					$articulo['descripcion'] = $row['des'];
 					$articulo['precio'] = $row['tipo'];
 					$articulos[]=$articulo;
 				}
@@ -65,9 +65,9 @@ function getBusqueda($codigo, $letra){
 				if(mysqli_num_rows($result) > 0){
 				while ($row = mysqli_fetch_assoc($result)) {
 					$articulo=Array();
-					$articulo['codigo'] = $row['a.codigo'];
+					$articulo['codigo'] = $row['cod'];
 					$articulo['tipo']=$letra;
-					$articulo['descripcion'] = $row['a.descripcion'];
+					$articulo['descripcion'] = $row['des'];
 					$articulo['precio'] = $row['tipo'];
 					$articulos[]=$articulo;
 				}
@@ -83,26 +83,46 @@ function getBusqueda($codigo, $letra){
 	return $articulos;
 }
 
-function listar($codigo,$tipo,$descripcion,$precio){
+function listar_factura(){
 				
 				$conn = getConexion();
-				$sql = "INSERT INTO tmp (id, tipo, descripcion, precio) VALUES ('$codigo', '$tipo', '$descripcion', '$precio')";
-				$insert = mysqli_query($conn, $sql);
+				// $sql = "INSERT INTO tmp (id, tipo, descripcion, precio, cantidad) VALUES ('$codigo', '$tipo', '$descripcion', '$precio', '$cantidad')";
+				// $insert = mysqli_query($conn, $sql);
 				
-				$sql2 = "SELECT id, tipo, descripcion, precio from tmp";
+				$sql2 = "SELECT DISTINCT id, tipo, descripcion, precio, cantidad from tmp";
 				$result = mysqli_query($conn, $sql2);
 				$listas=Array();
 				if(mysqli_num_rows($result) > 0){
-				while ($row = mysqli_fetch_assoc($result)) {
-					
-					$lista['id'] = $row['id'];
-					$lista['tipo']= $row['tipo'];
-					$lista['descripcion'] = $row['descripcion'];
-					$lista['precio'] = $row['tipo'];
-					$listas[]=$lista;
-				}
+					while ($row = mysqli_fetch_assoc($result)) {
+						
+						$lista['id'] = $row['id'];
+						$lista['tipo']= $row['tipo'];
+						$lista['descripcion'] = $row['descripcion'];
+						$lista['precio'] = $row['precio'];
+						$lista['cantidad'] = $row['cantidad'];
+						$lista['total'] = $row['cantidad']*$row['precio'];
+						$lista['suma_total'] = $lista['suma_total'] + $lista['total'];
+						$listas[]=$lista;
+					}
 				} else {
 					$listas="NO HAY DATOS";
 				}
+	return $listas;
+}
+function agregar($codigo, $tipo, $descripcion,$precio, $cantidad){
+	$conn = getConexion();
+	$sql = "INSERT INTO tmp (id, tipo, descripcion, precio, cantidad) VALUES ('$codigo', '$tipo', '$descripcion', '$precio', '$cantidad')";
+	$insert = mysqli_query($conn, $sql);
+	$listas = listar_factura();
+	return $listas;
+}
+function eliminar_art($accion){
+	$conn = getConexion();
+	$sql = "DELETE FROM tmp WHERE id='$accion';";
+	$delete = mysqli_query($conn, $sql);
+	$listas = listar_factura();
+	if($delete){
+        echo "<script>alert('Se ha cancelado el pago de su reserva.'); window.location.href='../vista/factura.php?';</script>";
+    }
 	return $listas;
 }

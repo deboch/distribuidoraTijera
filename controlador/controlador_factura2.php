@@ -2,6 +2,7 @@
 include_once("../modelo/modelo_factura.php");
 //vaciarTMP();
 $listas=[];
+
 if(isset($_POST["codigo"])){
 	if(isset($_POST["tipo"])){
 		if(isset($_POST["descripcion"])){
@@ -10,11 +11,16 @@ if(isset($_POST["codigo"])){
 				$tipo=$_POST["tipo"];
 				$descripcion=$_POST["descripcion"];
 				$precio=$_POST["precio"];
-				$listas= listar($cod_agregar,$tipo,$descripcion,$precio);
+				$cantidad=$_POST["cantidad"];
+				$listas= agregar($cod_agregar, $tipo, $descripcion, $precio, $cantidad);
 				$articulos = [];
 			}
 		}
 	}
+}
+if(isset($_POST["accion"])){
+    $accion = $_POST['accion'];
+    $listas =  eliminar_art($accion);
 }
 include_once("../vista/factura.php");
 

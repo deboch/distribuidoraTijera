@@ -2,10 +2,10 @@
 <!DOCTYPE html>
 <html>
 <?php
-include("../head.php");
-include("../controlador/controlador_factura2.php");
-
-
+include_once("../head.php");
+include_once("../controlador/controlador_factura2.php");
+$listas = listar_factura();
+error_reporting(0);
 
 ?>
 
@@ -104,6 +104,9 @@ include("../controlador/controlador_factura2.php");
 						<div class='col-md-1'>
 						<label class='' id='precio' >Precio</label><input class='form-control' type='text' name='precio' value='".$articulo['precio']."' >	
 						</div>
+						<div class='col-md-1'>
+						<label class='' id='cantidad' >Cantidad</label><input class='form-control' type='text' name='cantidad' value='1' >	
+						</div>
 						<div class='col-md-2'>
 							<br>
 							<button type='submit' class='btn btn-info' style='margin-top: 8px'>Agregar</button>
@@ -129,19 +132,20 @@ include("../controlador/controlador_factura2.php");
 					<th scope="col"></th>
 					</tr>
 				</thead>
-				<form class="form-horizontal" role="form" id="datos_factura" method="post">
+				<form class="form-horizontal" role="form" id="datos_factura" method="post" action="">
 					<tbody>
 						<?php
 						foreach($listas as $lista){
 							echo "<tr>
 								 <td>".$lista['id']."</td>                             
 								 <td>".$lista['tipo']."</td>
-								 <td>0</td>
+								 <td>".$lista['cantidad']."</td>
 								 <td>".$lista['descripcion']."</td>
 								 <td>".$lista['precio']."</td>
-								 <td>0</td>  
-								 <td><a href=''>Eliminar</a></td>                         
+								 <td>".$lista['total']."</td>  
+								 <td><a href='controlador_factura2.php?accion=".$lista['id']."'>Eliminar</a></td>                         
 							 </tr>";
+							 $total = $lista['total'] + $total;
 						}
 						?>
 					</tbody>
@@ -149,7 +153,10 @@ include("../controlador/controlador_factura2.php");
 				<br></form>
 				
 				</table>
-			
+					<?php
+					 echo "<label class='' id='precio' >Total</label><input class='form-control' type='text' name='precio' value='".$total."' readOnly>";
+						
+					?>	
 				<br><br><br><br><br><br>
 				<div>
 					<button type="button" class="btn btn-success float-right agregar">Imprimir</button> 
