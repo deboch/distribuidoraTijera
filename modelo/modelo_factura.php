@@ -118,9 +118,9 @@ function agregar($codigo, $tipo, $descripcion,$precio, $cantidad){
 	$listas = listar_factura();
 	return $listas;
 }
-function eliminar_art($accion){
+function eliminar_art($id){
 	$conn = getConexion();
-	$sql = "DELETE FROM tmp WHERE id='$accion'";
+	$sql = "DELETE FROM tmp WHERE id='$id'";
 	$delete = mysqli_query($conn, $sql);
 	if($delete){
         echo "<script>alert('Se ha cancelado el pago de su reserva.'); window.location.href='../vista/factura.php?';</script>";

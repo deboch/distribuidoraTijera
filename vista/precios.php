@@ -58,7 +58,7 @@ include("../head.php");
                              <td>".$articulo['S']."</td>
                              <td>".$articulo['B']."</td>
                              <td>".$articulo['V']."</td>
-                             <td><a href='modificarArticulo.php?codigo=".$articulo['codigo']."/descripcion=".$articulo['descripcion']."/G=".$articulo['G']."/S=".$articulo['S']."/B=".$articulo['B']."/V=".$articulo['V']."'>Modificar</a></td>
+                             <td><a href='modificarArticulo.php?codigo=".$articulo['codigo']."&descripcion=".$articulo['descripcion']."&G=".$articulo['G']."&S=".$articulo['S']."&B=".$articulo['B']."&V=".$articulo['V']."'>Modificar</a></td>
                              <td><a href=''>Eliminar</a></td>                         
                          </tr>";
                     }

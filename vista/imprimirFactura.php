@@ -3,7 +3,16 @@
 <?php
 include_once("../head.php");
 ?>
+<script type="text/javascript">
+	
+	function cargarCliente(){
 
+document.getElementById("cliente").innerHTML = document.getElementById("cliente").value;
+document.getElementById("telefono").innerHTML = document.getElementById("telefono").value;
+document.getElementById("fecha").innerHTML = document.getElementById("fecha").value;
+
+}
+</script>
 <body>
 
 	<div class="container" id="aImprimir">
@@ -26,7 +35,27 @@ include_once("../head.php");
 				<div class="row">
 					<div class="col-md-4">
 						<label class="form-control">Cliente</label>
-						<input class="form-control" type="text" placeholder="Ingrese cliente" id="cliente">
+						<input class="form-control" type="text" placeholder="Ingrese cliente" id="cliente" onChange="cargarCliente()">
+					</div>
+					<div class="col-md-4">   
+						<label class="form-control">Teléfono</label>
+						<input class="form-control" type="text" placeholder="Ingrese teléfono" id="telefono" onChange="cargarCliente()">
+					</div>
+					<div class="col-md-4">
+						<label class="form-control">Fecha</label>
+						<input class="form-control" type="date" placeholder="Ingrese fecha" id="fecha"  onChange="cargarCliente()">
+					</div>
+				</div>
+						  
+			</div> 
+		</div>
+<!-- 
+        <div class="row" >
+			<div class="col-md-12">
+				<div class="row">
+					<div class="col-md-4">
+						<h3>Cliente</h3>
+						<h2></h2>
 					</div>
 					<div class="col-md-4">   
 						<label class="form-control">Teléfono</label>
@@ -39,7 +68,7 @@ include_once("../head.php");
 				</div>
 						  
 			</div> 
-		</div>
+		</div>  -->
 		<br>
         <table class="table table-striped" id="mitabla">
 				<thead>
@@ -50,7 +79,7 @@ include_once("../head.php");
 					<th scope="col">Descripción</th>
 					<th scope="col">Precio Unit.</th>
 					<th scope="col">Total</th>
-					<th scope="col"></th>
+					<!-- <th scope="col"></th> -->
 					</tr>
 				</thead>
 				<form class="form-horizontal" role="form" id="datos_factura" method="post" action="">
@@ -97,29 +126,28 @@ include_once("../head.php");
 				
 				</table>
                     <?php
-					    echo "<label class='' id='precio' >Total</label><input class='form-control' type='text' name='precio' value='".$total."' readOnly>";	
+                        echo "<h2>Total</h2>	
+                              <h2>".$total."</h2>"	
 					?>	
 				<br><br><br><br><br><br>
                 <button class="btn btn-success float-right agregar"><a href="javascript:crearPdf()" style="color:white!important">Descargar</a></button>
                 </form>
+    </div>            
         </body>
 <script>
     function crearPdf() {
         var pdf = new jsPDF('p', 'pt', 'letter');
-        source = $('#aImprimir')[0];
+        //source = $('#aImprimir')[0];
         specialElementHandlers = {
             '#bypassme': function (element, renderer) {
                 return true
             }
         };
         margins = {
-            top: 80,
-            bottom: 0,
-            left:10,
-            width: 10
+            
         };
         pdf.fromHTML(
-            source,
+            aImprimir,
             margins.left, // x coord
             margins.top, { // y coord
                 'width': margins.width,

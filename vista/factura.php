@@ -8,8 +8,7 @@ $listas = listar_factura();
 error_reporting(0);
 
 ?>
-
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 	/* function buscar(){
 		var tipo_art=document.getElementById('tipo_art').value;
 		var codigo=document.getElementById('codigo').value;
@@ -22,7 +21,8 @@ document.getElementById("telefono2").value = document.getElementById("telefono")
 document.getElementById("fecha2").value = document.getElementById("fecha").value;
 
 }
-</script>
+</script> -->
+
 <body>
 
 	<div class="container">
@@ -131,7 +131,7 @@ document.getElementById("fecha2").value = document.getElementById("fecha").value
 								 <td>".$lista['descripcion']."</td>
 								 <td>".$lista['precio']."</td>
 								 <td>".$lista['total']."</td>  
-								 <td><a href='controlador_factura2.php?accion=".$lista['id']."'>Eliminar</a></td>                         
+								 <td><a href='../controlador/controlador_factura2.php?accion=".$lista['id']."'>Eliminar</a></td>                         
 							 </tr>";
 							 $total = $lista['total'] + $total;
 						}
@@ -155,7 +155,7 @@ document.getElementById("fecha2").value = document.getElementById("fecha").value
 	</div>
 </body>
 <footer></footer>
-<script>
+<!-- <script>
     function crearPdf() {
         var pdf = new jsPDF('p', 'pt', 'letter');
         source = $('#aImprimir')[0];
@@ -182,7 +182,7 @@ document.getElementById("fecha2").value = document.getElementById("fecha").value
             }, margins
         );
     }
-</script>
+</script> -->
 	
 
 </html>

@@ -18,9 +18,9 @@ if(isset($_POST["codigo"])){
 		}
 	}
 }
-if(isset($_POST["accion"])){
-    $accion = $_POST['accion'];
-    $listas =  eliminar_art($accion);
+if(isset($_GET["accion"])){
+    $id = $_GET["accion"];
+    $listas =  eliminar_art($id);
 }
 include_once("../vista/factura.php");
 
