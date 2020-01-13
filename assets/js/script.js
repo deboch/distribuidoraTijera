@@ -11,8 +11,13 @@ function eliminarFila(){
   else
     table.deleteRow(rowCount -1);
 }
-function calcularBonificacion(elemento){
-  var bonificacion = document.getElementById(elemento).value;
-  document.getElementById("conDescuento").value=bonificacion;
+function calcularBonificacion(){
+  console.log("entro a la funcion");
+  var bonificacion = document.getElementById("bonificacion").value;
+  var total = document.getElementById("total").value;
+  document.getElementById("conDescuento").value =  total*(1-(bonificacion/100));
+  
+ 
+
 }
  

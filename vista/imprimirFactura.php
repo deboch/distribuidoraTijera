@@ -87,26 +87,6 @@ document.getElementById("fecha").innerHTML = document.getElementById("fecha").va
 						  
 			</div> 
 		</div>
-<!-- 
-        <div class="row" >
-			<div class="col-md-12">
-				<div class="row">
-					<div class="col-md-4">
-						<h3>Cliente</h3>
-						<h2></h2>
-					</div>
-					<div class="col-md-4">   
-						<label class="form-control">Teléfono</label>
-						<input class="form-control" type="text" placeholder="Ingrese teléfono" id="telefono">
-					</div>
-					<div class="col-md-4">
-						<label class="form-control">Fecha</label>
-						<input class="form-control" type="date" placeholder="Ingrese fecha" id="fecha"  onChange="duplicar()">
-					</div>
-				</div>
-						  
-			</div> 
-		</div>  -->
 		<br>
         <table class="table table-striped" id="mitabla">
 				<thead>
@@ -165,13 +145,22 @@ document.getElementById("fecha").innerHTML = document.getElementById("fecha").va
 				</table>
 					<h2>Observaciones:</h2>
 					<h3>Bonificacion Global (%)</h3>
-					<input type="text" name="bonificacion" id="bonificacion" value="35" onchange="calcularBonificacion('bonificaciion');">
+					<input type="text" name="bonificacion" id="bonificacion" value="" onchange="calcularBonificacion('bonificaciion');">
 					<?php
-                        echo "<h2>SubTotal</h2>	
+                        echo "<h2>SubTotal:</h2>	
 							  <h2>".$total."</h2>
-					 		  <h2>Descuento</h2>
-							  <input type='text' name='conDescuento' id='conDescuento' value=''>";	
+							  <input type='text' name='total' id='total' value= '".$total."' hidden='hidden'>
+					 		  <h2>Total Bonificado:</h2>
+							  <input type='text' name='conDescuento' id='conDescuento'>";	
 					?>	
+
+					<p>Forma de pago: Cheque pago diferido 7 días fecha factura.
+					Transcurrido dicho plazo, se ajustará de acuerdo al valor del dólar estaunidense, tipo
+					vendedor Banco Nación del día anterior al del efectivo pago.-</p>
+
+					<p>Forma de pago : 
+					Plazo de entrega :</p>
+					
 				<br><br><br><br><br><br>
                 <button class="btn btn-success float-right agregar"><a href="javascript:crearPdf()" style="color:white!important">Descargar</a></button>
                 </form>
