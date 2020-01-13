@@ -28,6 +28,19 @@ function getClientes(){
     return $clientes;
 }
 function deleteCliente($nro_cliente){
+    /* $conn = getConexion();
+    $delete = "DELETE FROM cliente WHERE numero='$nro_cliente'";
+    $result  mysqli_query($conn,$delete);
+    mysqli_close($conn); */
+    return $clientes;
+}
+
+function updateCliente($cliente_num,$cliente_nom,$cliente_dir,$cliente_loc,$cliente_tel){
     $conn = getConexion();
-    $sql = "DELETE from cliente where numero=$nro_cliente";
+    $sql = "UPDATE cliente set  cliente.nombre='$cliente_nom', cliente.direccion='$cliente_dir',cliente.localidad='$cliente_loc',cliente.telefono='$cliente_tel' WHERE cliente.numero=$cliente_num";
+    $result = mysqli_query($conn, $sql);
+    $clientes=getClientes();
+    mysqli_close($conn);
+    return $clientes;
+
 }
