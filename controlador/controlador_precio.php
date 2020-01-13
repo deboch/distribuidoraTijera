@@ -12,8 +12,8 @@ if(isset($_GET["cod_art"])){
 	include("../vista/precios.php");
 }
 
-    $descripcion = $_GET["descripcion"];
-    $G = $_GET["G"];
-    $S = $_GET["S"];
-    $B = $_GET["B"];
-    $V = $_GET["V"];
+    // $descripcion = $_GET["descripcion"];
+    // $G = $_GET["G"];
+    // $S = $_GET["S"];
+    // $B = $_GET["B"];
+    // $V = $_GET["V"];
