@@ -11,5 +11,8 @@ function eliminarFila(){
   else
     table.deleteRow(rowCount -1);
 }
-
+function calcularBonificacion(elemento){
+  var bonificacion = document.getElementById(elemento).value;
+  document.getElementById("conDescuento").value=bonificacion;
+}
  

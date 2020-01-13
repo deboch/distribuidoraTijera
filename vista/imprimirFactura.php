@@ -18,6 +18,7 @@ document.getElementById("fecha").innerHTML = document.getElementById("fecha").va
 	<div class="container" id="aImprimir">
 		<div class="row">
 			<div class="col-md-6 tituloFactura">
+				<br>
 				<h1>Repuesto del automotor</h1>
 			</div>
 		</div>
@@ -43,13 +44,13 @@ document.getElementById("fecha").innerHTML = document.getElementById("fecha").va
 			<div class="col-md-12">
 				<div class="row">
 					<div class="col-md-2">
-						<label class="">Vendedor</label>	
+						<label class="">Vendedor:</label>	
 					</div>
 					<div class="col-md-4">   
 						<input class="form-control" type="text" placeholder="Ingrese cliente" id="nombreVendedor" onChange="cargarCliente()" value="Alberto Tijera">
 					</div>
 					<div class="col-md-2">
-						<label class="">Cliente</label>	
+						<label class="">Cliente:</label>	
 					</div>
 					<div class="col-md-4">   
 						<input class="form-control" type="text" placeholder="Ingrese cliente" id="cliente" onChange="cargarCliente()">
@@ -57,13 +58,13 @@ document.getElementById("fecha").innerHTML = document.getElementById("fecha").va
 				</div>
 				<div class="row">
 					<div class="col-md-2">
-						<label class="">Teléfono</label>
+						<label class="">Teléfono:</label>
 					</div>
 					<div class="col-md-4">   
 						<input class="form-control" type="text" id="telefonoVendedor" onChange="cargarCliente()" value="(+54-11)4487-2174">
 					</div>
 					<div class="col-md-2">
-						<label class="">Teléfono</label>
+						<label class="">Teléfono:</label>
 					</div>
 					<div class="col-md-4">   
 						<input class="form-control" type="text" placeholder="Ingrese teléfono" id="telefono" onChange="cargarCliente()">
@@ -71,13 +72,13 @@ document.getElementById("fecha").innerHTML = document.getElementById("fecha").va
 				</div>
 				<div class="row">
 					<div class="col-md-2">
-						<label class="">Ciudad</label>
+						<label class="">Ciudad:</label>
 					</div>
 					<div class="col-md-4">
 						<input class="form-control" type="text" id="lugar"  onChange="cargarCliente()" value="Buenos Aires">
 					</div>
 					<div class="col-md-2">
-						<label class="">Fecha</label>
+						<label class="">Fecha:</label>
 					</div>
 					<div class="col-md-4">
 						<input class="form-control" type="date" placeholder="Ingrese fecha" id="fecha"  onChange="cargarCliente()">
@@ -162,9 +163,14 @@ document.getElementById("fecha").innerHTML = document.getElementById("fecha").va
 				<br>
 				
 				</table>
-                    <?php
-                        echo "<h2>Total</h2>	
-                              <h2>".$total."</h2>"	
+					<h2>Observaciones:</h2>
+					<h3>Bonificacion Global (%)</h3>
+					<input type="text" name="bonificacion" id="bonificacion" value="35" onchange="calcularBonificacion('bonificaciion');">
+					<?php
+                        echo "<h2>SubTotal</h2>	
+							  <h2>".$total."</h2>
+					 		  <h2>Descuento</h2>
+							  <input type='text' name='conDescuento' id='conDescuento' value=''>";	
 					?>	
 				<br><br><br><br><br><br>
                 <button class="btn btn-success float-right agregar"><a href="javascript:crearPdf()" style="color:white!important">Descargar</a></button>
