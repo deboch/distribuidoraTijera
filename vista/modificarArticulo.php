@@ -1,16 +1,24 @@
 <html>
 <head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="../assets/css/style.css">
+	<script src="../assets/js/script.js"></script>
+    <!-- CUSTOM STYLE CSS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+	<script type="text/javascript" src="../reportesPDF/js/loader.js"></script>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 <body>
 <div class="container">
+
         <?php 
-        $articulo_seleccionado =$_GET['codigo'];
-        $articulo_descr =$_GET['descripcion'];
+        $articulo_cod =$_GET['codigo'];
+        $articulo_descr = $_GET['descripcion'];
         $articulo_g =$_GET['G'];
         $articulo_s =$_GET['S'];
         $articulo_b =$_GET['B'];
         $articulo_v =$_GET['V'];
-        echo "<h1>Modificar artículo: ". $articulo_seleccionado."</h1>";
+        echo "<h1>Modificar artículo: ". $articulo_cod."</h1>";
 ?>
 
         <form method="POST" action = "../controlador/controlador_modificar_articulo.php">
@@ -20,7 +28,7 @@
                 <label class='' id='codigo'>Codigo</label>
                 </div>
                 <div class= col-md-1>
-                <input class='form-control' type='text' name='codigo' value='".$articulo_seleccionado."' readOnly>
+                <input class='form-control' type='text' name='codigo' value='".$articulo_cod."' readOnly>
                 </div>
                 </div>
                 <div class='row'>

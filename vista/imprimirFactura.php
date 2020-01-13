@@ -16,11 +16,20 @@ document.getElementById("fecha").innerHTML = document.getElementById("fecha").va
 <body>
 
 	<div class="container" id="aImprimir">
-		
+		<div class="row">
+			<div class="col-md-6 tituloFactura">
+				<h1>Repuesto del automotor</h1>
+			</div>
+		</div>
 		<br><br>
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Factura<h2>
+				<div class="separador"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4 offset-5">
+				<h3>Presupuesto<h3>
 			</div>
 		</div>
 		<div class="row">
@@ -33,16 +42,44 @@ document.getElementById("fecha").innerHTML = document.getElementById("fecha").va
 		<div class="row" >
 			<div class="col-md-12">
 				<div class="row">
-					<div class="col-md-4">
-						<label class="form-control">Cliente</label>
-						<input class="form-control" type="text" placeholder="Ingrese cliente" id="cliente" onChange="cargarCliente()">
+					<div class="col-md-2">
+						<label class="">Vendedor</label>	
 					</div>
 					<div class="col-md-4">   
-						<label class="form-control">Teléfono</label>
+						<input class="form-control" type="text" placeholder="Ingrese cliente" id="nombreVendedor" onChange="cargarCliente()" value="Alberto Tijera">
+					</div>
+					<div class="col-md-2">
+						<label class="">Cliente</label>	
+					</div>
+					<div class="col-md-4">   
+						<input class="form-control" type="text" placeholder="Ingrese cliente" id="cliente" onChange="cargarCliente()">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-2">
+						<label class="">Teléfono</label>
+					</div>
+					<div class="col-md-4">   
+						<input class="form-control" type="text" id="telefonoVendedor" onChange="cargarCliente()" value="(+54-11)4487-2174">
+					</div>
+					<div class="col-md-2">
+						<label class="">Teléfono</label>
+					</div>
+					<div class="col-md-4">   
 						<input class="form-control" type="text" placeholder="Ingrese teléfono" id="telefono" onChange="cargarCliente()">
 					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-2">
+						<label class="">Ciudad</label>
+					</div>
 					<div class="col-md-4">
-						<label class="form-control">Fecha</label>
+						<input class="form-control" type="text" id="lugar"  onChange="cargarCliente()" value="Buenos Aires">
+					</div>
+					<div class="col-md-2">
+						<label class="">Fecha</label>
+					</div>
+					<div class="col-md-4">
 						<input class="form-control" type="date" placeholder="Ingrese fecha" id="fecha"  onChange="cargarCliente()">
 					</div>
 				</div>

@@ -1,5 +1,6 @@
 <?php
     include("../modelo/modelo_precio.php");
+   
     $id= $_POST["codigo"];
     $descripcion = $_POST["descripcion"];
     $G = $_POST["G"];

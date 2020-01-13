@@ -9,7 +9,7 @@ if(isset($_GET["cod_art"])){
     }else{
         $articulos = getListaPrecios();
     }
-	include("../vista/articulos.php");
+	include("../vista/precios.php");
 }
 
     $descripcion = $_GET["descripcion"];
