@@ -9,7 +9,7 @@
 include("../head.php");
 ?>
 <body>
-<div class="container">
+<div class="container" id="aImprimir">
 		<?php
 			include("../header.php");
 		?>
@@ -57,7 +57,7 @@ include("../head.php");
                             <input class="form-control" type="text" placeholder="Código" id="cod_art" name="cod_art">    
                         </div>
 						<div class="col-md-3">
-							<button class="btn btn-primary" type="submit">Buscar</button>
+							<button class="btn btn-info" type="submit">Buscar</button>
 						</div>
                     </div>                 
                 </form>
@@ -66,42 +66,68 @@ include("../head.php");
     </div>
    
     <div class="table-responsive">
-	 <button type="button" class="btn btn-success agregar float-right">Agregar</button>  
-     <br>
-            <table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
-                <thead>
-                <tr>
-                    <th>Articulo</th>
-                    <th>Descripcion</th>
-                    <th>G($)</th>
-                    <th>S($)</th>
-                    <th>B($)</th>
-                    <th>V($)</th>
-                    <th></th>
-                    <th></th>
-                </tr>
-                </thead>
-                <tbody>
-                <?php
-                    foreach ($articulos as $articulo){
-                        echo "<tr>
-                             <td>".$articulo['codigo']."</td>                             
-                             <td>".$articulo['descripcion']."</td>
-                             <td>".$articulo['G']."</td>
-                             <td>".$articulo['S']."</td>
-                             <td>".$articulo['B']."</td>
-                             <td>".$articulo['V']."</td>
-                             <td><a href='modificarArticulo.php?codigo=".$articulo['codigo']."&descripcion=".$articulo['descripcion']."&G=".$articulo['G']."&S=".$articulo['S']."&B=".$articulo['B']."&V=".$articulo['V']."'>Modificar</a></td>
-                             <td><a href=''>Eliminar</a></td>                         
-                         </tr>";
-                    }
-                ?>
-                </tbody>
-            </table>
-		</div>
-		</div>
-		</div>
+        <button type="button" class="btn btn-success agregar float-right">Agregar</button> 
+        <button class="btn btn-secondary agregar float-right"><a href="javascript:crearPdf()" style="color:white!important">Descargar</a></button> 
+        
+        <br>
+                <table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                    <tr>
+                        <th>Articulo</th>
+                        <th>Descripcion</th>
+                        <th>G($)</th>
+                        <th>S($)</th>
+                        <th>B($)</th>
+                        <th>V($)</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                        foreach ($articulos as $articulo){
+                            echo "<tr>
+                                <td>".$articulo['codigo']."</td>                             
+                                <td>".$articulo['descripcion']."</td>
+                                <td>".$articulo['G']."</td>
+                                <td>".$articulo['S']."</td>
+                                <td>".$articulo['B']."</td>
+                                <td>".$articulo['V']."</td>
+                                <td><a href='modificarArticulo.php?codigo=".$articulo['codigo']."&descripcion=".$articulo['descripcion']."&G=".$articulo['G']."&S=".$articulo['S']."&B=".$articulo['B']."&V=".$articulo['V']."'>Modificar</a></td>
+                                <td><a href=''>Eliminar</a></td>                         
+                            </tr>";
+                        }
+                    ?>
+                    </tbody>
+                </table>
+	</div>
+</div>
 		
 </body>
+<script>
+    function crearPdf() {
+        var pdf = new jsPDF('p', 'pt', 'letter');
+        //source = $('#aImprimir')[0];
+        specialElementHandlers = {
+            '#bypassme': function (element, renderer) {
+                return true
+            }
+        };
+        margins = {
+            
+        };
+        pdf.fromHTML(
+            aImprimir,
+            margins.left, // x coord
+            margins.top, { // y coord
+                'width': margins.width,
+                'elementHandlers': specialElementHandlers
+            },
+            function (dispose) {
+                pdf.save('listaDePrecios.pdf');
+            }, margins
+        );
+    }
+</script>
 <footer></footer>
 </html>
