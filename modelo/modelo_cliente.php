@@ -17,7 +17,7 @@ function getClientes(){
             $cliente['direccion'] = $row["direccion"];
             $cliente['localidad'] = $row["localidad"];
             $cliente['telefono'] = $row["telefono"];
-            $clientes[] = $cliente;
+            $clientes[] = $cliente; 
         }
     }
     else{
@@ -28,10 +28,11 @@ function getClientes(){
     return $clientes;
 }
 function deleteCliente($nro_cliente){
-    /* $conn = getConexion();
+    $conn = getConexion();
     $delete = "DELETE FROM cliente WHERE numero='$nro_cliente'";
-    $result  mysqli_query($conn,$delete);
-    mysqli_close($conn); */
+    $result = mysqli_query($conn,$delete);
+    mysqli_close($conn); 
+    $clientes=getClientes();
     return $clientes;
 }
 
