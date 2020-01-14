@@ -6,7 +6,7 @@
 			<h1 class="titulo">Distribuidora T</h1>
 		</div>
 		<div class="col-md-3">
-			<a class="btn inicio" href="../index.php"><img src="../assets/img/images.png" style="width:42px;height:42px;border:0"></img></a>
+			<a class="btn inicio" href="../index.php"><img src="../assets/img/home.png" style="width:50px;height:50px;border:0"></img></a>
 		</div>
 	</div>
 </header>

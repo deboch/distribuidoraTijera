@@ -34,7 +34,7 @@ include("../head.php");
                             <input class="form-control" type="text" placeholder="Articulo" id="cod_art" name="cod_art">    
                         </div>
 						<div class="col-md-3">
-                        <button class="btn btn-info" type="submit">Buscar</button>
+                        <button class="btn btn-info" type="submit">BUSCAR</button>
 						</div>
                     </div>
                         

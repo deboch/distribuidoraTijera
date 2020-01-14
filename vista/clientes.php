@@ -25,7 +25,7 @@ include_once("../header.php");
 			</div>
 		</div>	
 		<br><br>
-    <button type="button" class="btn btn-info float-right agregar">Agregar</button> 
+    <button type="button" class="btn btn-info float-right agregar">AGREGAR</button> 
  
     <div class="table-responsive">
             <table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
@@ -49,8 +49,8 @@ include_once("../header.php");
                              <td>".$cliente['direccion']."</td>
                              <td>".$cliente['localidad']."</td>
                              <td>".$cliente['telefono']."</td>  
-                             <td><a href='../controlador/controlador_cliente.php?numero=".$cliente['numero']."'>Eliminar</a></td>
-                             <td><a href='modificarCliente.php?numero=".$cliente['numero']."&nombre=".$cliente['nombre']."&direccion=".$cliente['direccion']."&localidad=".$cliente['localidad']."&telefono=".$cliente['telefono']."'>Modificar</a></td>                           
+                             <td><a href='../controlador/controlador_cliente.php?numero=".$cliente['numero']."'><img src='../assets/img/cleaner.png' style='width:42px;height:42px;border:0' title='Eliminar'></img></a></td>
+                             <td><a href='modificarCliente.php?numero=".$cliente['numero']."&nombre=".$cliente['nombre']."&direccion=".$cliente['direccion']."&localidad=".$cliente['localidad']."&telefono=".$cliente['telefono']."'><img src='../assets/img/modify.png' style='width:42px;height:42px;border:0' title='Modificar'></img></a></td>                           
                          </tr>";
                     }
                 ?>

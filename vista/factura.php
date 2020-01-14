@@ -67,7 +67,7 @@ document.getElementById("fecha2").value = document.getElementById("fecha").value
 									</select>   
 								</div>
 								<div class="col-md-3">
-								<button class="btn btn-info" type="submit" onclick="visualizarCampos()">Buscar</button>
+								<button class="btn btn-info" type="submit" onclick="visualizarCampos()">BUSCAR</button>
 								</div>
 							</div> 
 					</div>
@@ -97,7 +97,7 @@ document.getElementById("fecha2").value = document.getElementById("fecha").value
 						</div>
 						<div class='col-md-2'>
 							<br>
-							<button type='submit' class='btn btn-info' style='margin-top: 8px'>Agregar</button>
+							<button type='submit' class='btn btn-info' style='margin-top: 8px'>AGREGAR</button>
 						</div>
 					</div>";
 					}
@@ -131,7 +131,7 @@ document.getElementById("fecha2").value = document.getElementById("fecha").value
 								 <td>".$lista['descripcion']."</td>
 								 <td>".$lista['precio']."</td>
 								 <td>".$lista['total']."</td>  
-								 <td><a href='../controlador/controlador_factura2.php?accion=".$lista['id']."'>Eliminar</a></td>                         
+								 <td><a href='../controlador/controlador_factura2.php?accion=".$lista['id']."'><img src='../assets/img/cleaner.png' style='width:25px;height:25px;border:0' title='Eliminar'></img></a></td>                         
 							 </tr>";
 							 $total = $lista['total'] + $total;
 						}
@@ -148,8 +148,8 @@ document.getElementById("fecha2").value = document.getElementById("fecha").value
 				<br><br><br><br><br><br>
 				<div>
 				
-					<button class="btn btn-info float-right agregar" type="submit"><a href="../vista/imprimirFactura.php" style="color:white!important">Siguiente</a></button>
-				
+					<button class="btn btn-info float-right agregar" type="submit"><a href="../vista/imprimirFactura.php" style="color:white!important">SIGUIENTE</a></button>
+					<button class="btn btn-danger float-right agregar" type="submit"><a href="../home.php" style="color:white!important">CANCELAR</a></button>
 				</div>
 		
 	</div>

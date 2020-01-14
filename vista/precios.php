@@ -57,7 +57,7 @@ include("../head.php");
                             <input class="form-control" type="text" placeholder="Código" id="cod_art" name="cod_art">    
                         </div>
 						<div class="col-md-3">
-							<button class="btn btn-info" type="submit">Buscar</button>
+							<button class="btn btn-info" type="submit">BUSCAR</button>
 						</div>
                     </div>                 
                 </form>
@@ -66,8 +66,8 @@ include("../head.php");
     </div>
    
     
-        <button type="button" class="btn btn-info agregar float-right">Agregar</button> 
-        <button class="btn btn-info agregar float-right"><a href="javascript:crearPdf()" style="color:white!important">Descargar</a></button> 
+        <button type="button" class="btn btn-info agregar float-right">AGREGAR</button> 
+        <button class="btn btn-info agregar float-right"><a href="javascript:crearPdf()" style="color:white!important">DESCARGAR</a></button> 
         
         <br>
         <div class="table-wrapper-scroll-y my-custom-scrollbar">    
@@ -94,8 +94,8 @@ include("../head.php");
                                 <td>".$articulo['S']."</td>
                                 <td>".$articulo['B']."</td>
                                 <td>".$articulo['V']."</td>
-                                <td><a href='modificarArticulo.php?codigo=".$articulo['codigo']."&descripcion=".$articulo['descripcion']."&G=".$articulo['G']."&S=".$articulo['S']."&B=".$articulo['B']."&V=".$articulo['V']."'><img src='../assets/img/modify.png' style='width:42px;height:42px;border:0'></img></a></td>
-                                <td><a href=''><img src='../assets/img/cleaner.png' style='width:42px;height:42px;border:0'></img></a></td>                         
+                                <td><a href='modificarArticulo.php?codigo=".$articulo['codigo']."&descripcion=".$articulo['descripcion']."&G=".$articulo['G']."&S=".$articulo['S']."&B=".$articulo['B']."&V=".$articulo['V']."'><img src='../assets/img/modify.png' style='width:42px;height:42px;border:0' title='Modificar'></img></a></td>
+                                <td><a href=''><img src='../assets/img/cleaner.png' style='width:42px;height:42px;border:0' title='Eliminar'></img></a></td>                         
                             </tr>";
                         }
                     ?>
