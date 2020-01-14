@@ -85,13 +85,6 @@ function getPrecioArticulo($codigo){
     mysqli_close($con);
     return $articulos;
 }
-// function modificar_articulo($codigo, $precioG, $precioS, $precioB, $precioV){
-//     $con = getConexion(); 
-//     $sql = "UPDATE precio_costo SET id='$codigo', G = '$precioG', S = '$precioS', B = '$precioB', V = '$precioV' where id='$codigo'";
-//     $result=mysqli_query($con,$sql);
-// }
-
-
 function updateArticulo($id,$descripcion,$G,$S,$B,$V){
     $conn = getConexion();
     $sql1 = "UPDATE articulo set articulo.codigo='$descripcion' WHERE articulo.codigo = $id";
