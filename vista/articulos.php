@@ -46,7 +46,7 @@ include("../head.php");
     
    
 
-    <div class="table-responsive">
+    <!-- <div class="table-responsive"> -->
 			
             <table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
                 <thead>
@@ -58,8 +58,10 @@ include("../head.php");
                     <th>Esp.</th>
                     <th>Form.</th>
                     <th>Giro</th>
-                    <th></th>
-                    <th></th>
+                    <th>G($)</th>
+                    <th>S($)</th>
+                    <th>B($)</th>
+                    <th>V($)</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -72,16 +74,20 @@ include("../head.php");
                              <td>".$articulo['aloj']."</td>
                              <td>".$articulo['esp']."</td>
                              <td>".$articulo['form']."</td>  
-                             <td>".$articulo['giro']."</td>
-                             <td><a href=''></a></td>
-                             <td><a href=''></a></td>                           
+                             <td>".$articulo['giro']."</td> 
+                             <td>".$articulo['G']."</td>
+                             <td>".$articulo['S']."</td>
+                             <td>".$articulo['B']."</td>
+                             <td>".$articulo['V']."</td>
+                             <td><a href=''><img src='../assets/img/cleaner.png' style='width:42px;height:42px;border:0'></img></a></td>
+                             <td><a href=''><img src='../assets/img/modify.png' style='width:42px;height:42px;border:0'></img></a></td>                           
                          </tr>";
                     }
                 ?>
                 </tbody>
             </table>
             
- </div> 
+ <!-- </div>  -->
  </div>
  </div>
 </body>
