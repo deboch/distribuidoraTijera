@@ -50,7 +50,7 @@ include_once("../header.php");
                              <td>".$cliente['localidad']."</td>
                              <td>".$cliente['telefono']."</td>  
                              <td><a href='../controlador/controlador_cliente.php?numero=".$cliente['numero']."'>Eliminar</a></td>
-                             <td><a href=''>Modificar</a></td>                           
+                             <td><a href='modificarCliente.php?numero=".$cliente['numero']."&nombre=".$cliente['nombre']."&direccion=".$cliente['direccion']."&localidad=".$cliente['localidad']."&telefono=".$cliente['telefono']."'>Modificar</a></td>                           
                          </tr>";
                     }
                 ?>
