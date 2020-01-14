@@ -16,8 +16,5 @@ function calcularBonificacion(){
   var bonificacion = document.getElementById("bonificacion").value;
   var total = document.getElementById("total").value;
   document.getElementById("conDescuento").value =  total*(1-(bonificacion/100));
-  
- 
-
 }
- 
+

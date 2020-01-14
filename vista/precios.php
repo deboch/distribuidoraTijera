@@ -17,19 +17,19 @@ include("../head.php");
     <div class="card shadow mb-4">
         <div class="card-body">
             <div class="card-header py-3">
-                <form method="get" action="../controlador/controlador_precio.php">
+                <form method="POST" action="../controlador/controlador_precio.php">
                     <div class="row" style="border: solid 0.3px #dcdddc; padding: 20px;">
-                    <div class=col-md-4>
+                    <div class=col-md-5>
                         <h5>Ingrese porcentaje a modificar:</h5>
                     </div>
                         <div class="col-md-2">
-                            <input class="form-control" type="text" >
+                            <input class="form-control" type="text" name="porcentajeMaterial">
                         </div>
                         <div class="col-md-1">
                             <h5>en </h5>
                         </div>
                         <div class="col-md-2">
-                            <select class="form-control">
+                            <select class="form-control" name="tipoMaterial">
                                 <option value="general">Todos</option>
                                 <option value="G">Material G</option>
                                 <option value="S">Material S</option>
@@ -38,7 +38,7 @@ include("../head.php");
                             </select>
                         </div>
                         <div class="col-md-2">
-                            <button type="button" class="btn btn-danger agregar float-right">Modificar</button>  
+                            <button  type="submit" class="btn btn-info agregar float-right">Modificar</button>  
                         </div>
                     </div>
                 </form>
@@ -49,7 +49,7 @@ include("../head.php");
         <div class="card-body">
             <div class="card-header py-3">
                 <form method="get" action="../controlador/controlador_precio.php">
-                    <div class="row">
+                    <div class="row" style="border: solid 0.3px #dcdddc; padding: 20px;">
                         <div class=col-md-3>
                             <h5>Ingrese Artículo:</h5>
                         </div>
@@ -65,12 +65,13 @@ include("../head.php");
         </div>
     </div>
    
-    <div class="table-responsive">
-        <button type="button" class="btn btn-success agregar float-right">Agregar</button> 
-        <button class="btn btn-secondary agregar float-right"><a href="javascript:crearPdf()" style="color:white!important">Descargar</a></button> 
+    
+        <button type="button" class="btn btn-info agregar float-right">Agregar</button> 
+        <button class="btn btn-info agregar float-right"><a href="javascript:crearPdf()" style="color:white!important">Descargar</a></button> 
         
         <br>
-                <table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
+        <div class="table-wrapper-scroll-y my-custom-scrollbar">    
+                <table class="table table-bordered table-striped mb-0" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                     <tr>
                         <th>Articulo</th>
@@ -93,13 +94,14 @@ include("../head.php");
                                 <td>".$articulo['S']."</td>
                                 <td>".$articulo['B']."</td>
                                 <td>".$articulo['V']."</td>
-                                <td><a href='modificarArticulo.php?codigo=".$articulo['codigo']."&descripcion=".$articulo['descripcion']."&G=".$articulo['G']."&S=".$articulo['S']."&B=".$articulo['B']."&V=".$articulo['V']."'>Modificar</a></td>
-                                <td><a href=''>Eliminar</a></td>                         
+                                <td><a href='modificarArticulo.php?codigo=".$articulo['codigo']."&descripcion=".$articulo['descripcion']."&G=".$articulo['G']."&S=".$articulo['S']."&B=".$articulo['B']."&V=".$articulo['V']."'><img src='../assets/img/modify.png' style='width:42px;height:42px;border:0'></img></a></td>
+                                <td><a href=''><img src='../assets/img/cleaner.png' style='width:42px;height:42px;border:0'></img></a></td>                         
                             </tr>";
                         }
                     ?>
                     </tbody>
                 </table>
+            
 	</div>
 </div>
 		

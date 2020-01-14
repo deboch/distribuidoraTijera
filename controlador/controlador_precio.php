@@ -1,19 +1,19 @@
 <?php
 include("../modelo/modelo_precio.php");
-$articulos = getListaPrecios();
+$articulos = getListaPreciosVentas();
 if(isset($_GET["cod_art"])){
     $codigo = $_GET['cod_art'];
     $articulos = "";
     if($codigo!=0){
         $articulos = getPrecioArticulo($codigo);
     }else{
-        $articulos = getListaPrecios();
+        $articulos = getListaPreciosVentas();
     }
 	include("../vista/precios.php");
 }
-
-    // $descripcion = $_GET["descripcion"];
-    // $G = $_GET["G"];
-    // $S = $_GET["S"];
-    // $B = $_GET["B"];
-    // $V = $_GET["V"];
+if(isset($_POST["porcentajeMaterial"])){
+    $porcentaje = $_POST["porcentajeMaterial"];
+    $tipo = $_POST["tipoMaterial"];
+    $precios = updatePrecio( $tipo,$porcentaje);
+    echo "<script>window.location.href='../vista/precios.php?';</script>";
+}

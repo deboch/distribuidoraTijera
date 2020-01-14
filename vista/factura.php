@@ -67,7 +67,7 @@ document.getElementById("fecha2").value = document.getElementById("fecha").value
 									</select>   
 								</div>
 								<div class="col-md-3">
-								<button class="btn btn-primary" type="submit" onclick="visualizarCampos()">Buscar</button>
+								<button class="btn btn-info" type="submit" onclick="visualizarCampos()">Buscar</button>
 								</div>
 							</div> 
 					</div>
@@ -148,7 +148,7 @@ document.getElementById("fecha2").value = document.getElementById("fecha").value
 				<br><br><br><br><br><br>
 				<div>
 				
-					<button class="btn btn-success float-right agregar" type="submit"><a href="../vista/imprimirFactura.php">Siguiente</a></button>
+					<button class="btn btn-info float-right agregar" type="submit"><a href="../vista/imprimirFactura.php" style="color:white!important">Siguiente</a></button>
 				
 				</div>
 		
