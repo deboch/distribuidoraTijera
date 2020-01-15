@@ -2,7 +2,7 @@
 require("../conexion.php");
 function getlistaArticulos(){
 	$conn = getConexion();
-    $sql = "SELECT a.codigo, a.descripcion, a.eje, a.aloj, a.esp, a.form, a.giro, pv.G, pv.S,pv.B,pv.V FROM articulo a ,precio_venta pv WHERE a.codigo=pv.codigo";
+    $sql = "SELECT a.codigo, a.descripcion, a.eje, a.aloj, a.esp, a.form, a.giro, pv.G, pv.S, pv.B, pv.V FROM articulo a ,precio_venta pv WHERE a.codigo=pv.codigo";
     $result = mysqli_query($conn, $sql);
 
     $articulos = Array();
@@ -36,10 +36,10 @@ function getlistaArticulos(){
 
 function getArticulo($codigo){
 	$con = getConexion();
-    $sql = "SELECT codigo, descripcion, eje, aloj, esp, form, giro FROM articulo where codigo= '$codigo'";
+    $sql = "SELECT a.codigo, a.descripcion, a.eje, a.aloj, a.esp, a.form, a.giro, pv.G, pv.S, pv.B, pv.V FROM articulo a, precio_venta pv WHERE a.codigo='$codigo' AND a.codigo=pv.codigo";
     $result = mysqli_query($con, $sql);
 
-    $art = Array();
+    $articulos = Array();
     if(mysqli_num_rows($result) > 0)
     {
         while ($row=mysqli_fetch_assoc($result))
@@ -51,8 +51,12 @@ function getArticulo($codigo){
             $articulo['aloj'] = $row["aloj"];
             $articulo['esp'] = $row["esp"];
             $articulo['form'] = $row["form"];
-			$articulo['giro'] = $row["giro"];
-            $art[] = $articulo;
+            $articulo['giro'] = $row["giro"];
+            $articulo['G'] = $row["G"];
+            $articulo['S'] = $row["S"];
+            $articulo['B'] = $row["B"];
+            $articulo['V'] = $row["V"];
+            $articulos[] = $articulo;
         }
     }
     else{
@@ -60,5 +64,5 @@ function getArticulo($codigo){
     }
 
     mysqli_close($con);
-    return $art;
+    return $articulos;
 }
