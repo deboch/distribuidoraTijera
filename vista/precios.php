@@ -23,10 +23,10 @@ include("../head.php");
                         <h5>Ingrese porcentaje a modificar:</h5>
                     </div>
                         <div class="col-md-2">
-                            <input class="form-control" type="text" name="porcentajeMaterial">
+                            <input class="form-control" type="text" name="porcentajeMaterial" id="porcentajeMaterial" onChange="addPorcent();">
                         </div>
                         <div class="col-md-1">
-                            <h5>en </h5>
+                            <h5> en </h5>
                         </div>
                         <div class="col-md-2">
                             <select class="form-control" name="tipoMaterial">
@@ -38,7 +38,7 @@ include("../head.php");
                             </select>
                         </div>
                         <div class="col-md-2">
-                            <button  type="submit" class="btn btn-info agregar float-right">Modificar</button>  
+                            <button  type="submit" class="btn btn-info agregar float-right">MODIFICAR</button>  
                         </div>
                     </div>
                 </form>
@@ -66,7 +66,7 @@ include("../head.php");
     </div>
    
     
-        <button type="button" class="btn btn-info agregar float-right">AGREGAR</button> 
+        <button type="button" class="btn btn-info agregar float-right"><a href="agregarArticulo.php" style="color:white!important">AGREGAR</a></button> 
         <button class="btn btn-info agregar float-right"><a href="javascript:getPDF()" style="color:white!important">DESCARGAR</a></button> 
         
         <br>
@@ -94,8 +94,8 @@ include("../head.php");
                                 <td>".$articulo['S']."</td>
                                 <td>".$articulo['B']."</td>
                                 <td>".$articulo['V']."</td>
-                                <td><a href='modificarPrecioArticulo.php?codigo=".$articulo['codigo']."&descripcion=".$articulo['descripcion']."&G=".$articulo['G']."&S=".$articulo['S']."&B=".$articulo['B']."&V=".$articulo['V']."'><img src='../assets/img/modify.png' style='width:42px;height:42px;border:0' title='Modificar'></img></a></td>
-                                <td><a href=''><img src='../assets/img/cleaner.png' style='width:42px;height:42px;border:0' title='Eliminar'></img></a></td>                         
+                                <td><a href='modificarPrecioArticulo.php?codigo=".$articulo['codigo']."&descripcion=".$articulo['descripcion']."&G=".$articulo['G']."&S=".$articulo['S']."&B=".$articulo['B']."&V=".$articulo['V']."'><img src='../assets/img/modify.png' style='width:42px;height:42px;border:0' title='Modificar' id='modificar'></img></a></td>
+                                <td><a href=''><img id='eliminar' src='../assets/img/cleaner.png' style='width:42px;height:42px;border:0' title='Eliminar'></img></a></td>                         
                             </tr>";
                         }
                     ?>
@@ -107,6 +107,13 @@ include("../head.php");
 		
 </body>
 <script>
+
+function addPorcent(){
+  
+        document.getElementById("porcentajeMaterial").value+="%";
+    
+   
+}
     function crearPdf() {
         
         var pdf = new jsPDF('p', 'pt', 'A4');
@@ -135,7 +142,7 @@ include("../head.php");
         console.log("inicio");
         var HTML_Width = $("#aImprimir").width();
         var HTML_Height = $("#aImprimir").height();
-        var top_left_margin = 15;
+        var top_left_margin = 20;
         var PDF_Width = HTML_Width+(top_left_margin*2);
         var PDF_Height = (PDF_Width*1.5)+(top_left_margin*2);
         var canvas_image_width = HTML_Width;
