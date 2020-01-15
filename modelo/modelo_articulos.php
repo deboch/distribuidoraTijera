@@ -36,7 +36,7 @@ function getlistaArticulos(){
 
 function getArticulo($codigo){
 	$con = getConexion();
-    $sql = "SELECT a.codigo, a.descripcion, a.eje, a.aloj, a.esp, a.form, a.giro, pv.G, pv.S, pv.B, pv.V FROM articulo a, precio_venta pv WHERE a.codigo='$codigo' AND a.codigo=pv.codigo";
+    $sql = "SELECT a.codigo, a.descripcion, a.eje, a.aloj, a.esp, a.form, a.giro, pc.G, pc.S, pc.B, pc.V FROM articulo a, precio_costo pc WHERE a.codigo='$codigo' AND a.codigo=pc.codigo";
     $result = mysqli_query($con, $sql);
 
     $articulos = Array();
