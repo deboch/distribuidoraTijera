@@ -220,8 +220,8 @@ function calcularBonificacion(elemento){
 					</div>
 					
 				<br><br><br><br><br><br>
-                <button class="btn btn-info float-right agregar"><a href="javascript:crearPdf()" style="color:white!important">Descargar</a></button>
-				<button class="btn btn-danger float-right agregar"><a href="../home.php" style="color:white!important">Cancelar</a></button>
+                <button class="btn btn-info float-right agregar"><a href="javascript:crearPdf()" style="color:white!important">DESCARGAR</a></button>
+				<button class="btn btn-danger float-right agregar"><a href="../home.php" style="color:white!important">CANCELAR</a></button>
                 </form>
     </div>            
         </body>
