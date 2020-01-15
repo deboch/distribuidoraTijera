@@ -25,7 +25,7 @@ include_once("../header.php");
 			</div>
 		</div>	
 		<br><br>
-    <button type="button" class="btn btn-info float-right agregar">AGREGAR</button> 
+    <button type="button" class="btn btn-info float-right agregar"><a href="agregarCliente.php" style="color:white!important">AGREGAR</a></button> 
  
     <div class="table-responsive">
             <table class="table table-striped" id="dataTable" width="100%" cellspacing="0">

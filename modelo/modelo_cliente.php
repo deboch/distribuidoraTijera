@@ -36,7 +36,7 @@ function deleteCliente($nro_cliente){
     return $clientes;
 }
 
-function updateCliente($cliente_num,$cliente_nom,$cliente_dir,$cliente_loc,$cliente_tel){
+function updateCliente($cliente_num, $cliente_nom, $cliente_dir, $cliente_loc, $cliente_tel){
     $conn = getConexion();
     $sql = "UPDATE cliente set  cliente.nombre='$cliente_nom', cliente.direccion='$cliente_dir',cliente.localidad='$cliente_loc',cliente.telefono='$cliente_tel' WHERE cliente.numero=$cliente_num";
     $result = mysqli_query($conn, $sql);
@@ -44,4 +44,12 @@ function updateCliente($cliente_num,$cliente_nom,$cliente_dir,$cliente_loc,$clie
     mysqli_close($conn);
     return $clientes;
 
+}
+function addCliente($cliente_num, $cliente_nom, $cliente_dir, $cliente_loc, $cliente_tel){
+    $conn = getConexion();
+    $sql = "INSERT INTO cliente (numero, nombre, direccion, localidad, telefono) values  ('$cliente_num', '$cliente_nom', '$cliente_dir', '$cliente_loc', '$cliente_tel' )";
+    $result = mysqli_query($conn, $sql);
+    $clientes=getClientes();
+    mysqli_close($conn);
+    return $clientes;
 }
