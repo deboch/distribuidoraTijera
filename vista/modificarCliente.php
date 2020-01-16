@@ -14,50 +14,31 @@ include_once("../head.php");
         ?>
         <form method="POST" action = "../controlador/controlador_modificar_cliente.php">
         <?php
-        echo   "<div class='row'>
-                <div class= col-md-1>
-                <label class='' id='numero'>Numero</label>
+        echo   "<div class='table-responsive' id='tablaAgregar'>
+                        <table class='table table-striped' id='dataTable' width='100%' cellspacing='0'>
+                        <thead>
+                                <tr>
+                                <th>Numero</th>
+                                <th>Cliente</th>
+                                <th>Direccion</th>
+                                <th>Localidad</th>
+                                <th>Telefono</th> 
+                                </tr>
+                        </thead>
+                        <tbody>
+                                <tr>
+                                <td><input class='form-control' type='text' value='".$cliente_num."' name='numero'></td>                             
+                                <td><input class='form-control' type='text' value='".$cliente_nom."' name='nombre'></td>
+                                <td><input class='form-control' type='text' value='".$cliente_dir."' name='direccion'></td>
+                                <td><input class='form-control' type='text' value='".$cliente_loc."' name='localidad'></td>
+                                <td><input class='form-control' type='text' value='".$cliente_tel."' name='telefono'></td>  
+                                </tr>
+                        </tbody>
+                        </table>
+
                 </div>
-                <div class= col-md-1>
-                <input class='form-control' type='text' name='numero' value='".$cliente_num."' readOnly>
-                </div>
-                </div>
-                <div class='row'>
-                <div class= col-md-1>
-                <label class='' id='nombre'>Nombre</label>
-                </div>
-                <div class= col-md-1>
-                <input class='form-control' type='text' name='nombre' value='".$cliente_nom."'>
-                </div>
-                </div>
-                <div class='row'>
-                <div class= col-md-1>
-                <label class='' id='direccion'>Direccion</label>
-                </div>
-                <div class= col-md-1>
-                <input class='form-control' type='text' name='direccion' value='".$cliente_dir."'>
-                </div>
-                </div>
-                <div class='row'>
-                <div class= col-md-1>
-                <label class='' id='localidad'>Localidad</label>
-                </div>
-                <div class= col-md-1>
-                <input class='form-control' type='text' name='localidad' value='".$cliente_loc."'>
-                </div>
-                </div>
-                <div class='row'>
-                <div class= col-md-1>
-                <label class='' id='telefono'>Telefono</label>
-                </div>
-                <div class= col-md-1>
-                <input class='form-control' type='text' name='telefono' value='".$cliente_tel."'>
-                </div>
-                </div>
-                <div class='col-md-2'>
-		<br>
-		<button type='submit' class='btn btn-info' style='margin-top: 8px'>Actualizar</button>
-		</div>"
+                <button class='btn btn-info float-right agregar' type='submit'>ACTUALIZAR</button>
+                <button class='btn btn-danger float-right agregar'><a href='../home.php' style='color:white!important'>CANCELAR</a></button>"
          ?>      
         </form>       
 </div>

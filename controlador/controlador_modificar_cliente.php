@@ -7,4 +7,4 @@
     $cliente_loc=$_POST['localidad'];
     $cliente_tel=$_POST['telefono'];
     $articulos=updateCliente($cliente_num,$cliente_nom,$cliente_dir,$cliente_loc,$cliente_tel);
-    echo "<script>window.location.href='../vista/clientes.php?';</script>";
+    
