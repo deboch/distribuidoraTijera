@@ -88,3 +88,16 @@ function deleteArticulo($nro_art){
     mysqli_close($conn); 
     
 }
+
+
+function addArticulo($articulo,$descripcion,$eje,$aloj,$esp,$form,$giro,$G,$S,$B,$V){
+    $conn = getConexion();
+    $inserART = "INSERT INTO articulo (codigo,eje,aloj,esp,form,giro,descripcion) values  ('$articulo', '$eje', '$aloj','$esp','$form','$giro','$descripcion' )";
+    $inserPcosto = "INSERT INTO precio_costo (codigo,G,S,B,V) values  ('$articulo','$G', '$S', '$B', '$V')";
+    $result = mysqli_query($conn, $inserART);
+    $result = mysqli_query($conn, $inserPcosto);
+    if($result){
+        echo "<script>alert('El cliente fué agregado con éxito.'); window.location.href='../vista/articulos.php?';</script>";
+    }
+    mysqli_close($conn);
+}

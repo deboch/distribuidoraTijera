@@ -25,10 +25,10 @@ include("../head.php");
 			</div>
 		</div>	
 		<br><br>
-    <div class="card shadow mb-4">
+        <div class="card shadow mb-4">
         <div class="card-body">
             <div class="card-header py-3">
-                <form method="get" action="../controlador/controlador_articulos.php">
+                <form method="get" action="../controlador/controlador_articulo.php">
                     <div class="row">
 						<div class="col-md-2">
                             <input class="form-control" type="text" placeholder="Articulo" id="cod_art" name="cod_art">    
@@ -43,7 +43,11 @@ include("../head.php");
                 </form>
         </div>
     </div>
-    
+    <div class="row">
+            <div class="col-md-11">
+                <button type="button" class="btn btn-info float-right agregar"><a href="agregarArticulo.php" style="color:white!important">AGREGAR</a></button>
+            </div>
+        </div>    
    
 
     <!-- <div class="table-responsive"> -->
