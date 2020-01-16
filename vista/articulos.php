@@ -67,6 +67,7 @@ include("../head.php");
                 <tbody>
                 <?php
                     foreach($articulos as $articulo){
+                        $art=$articulo['codigo'];
                         echo "<tr>
                              <td>".$articulo['codigo']."</td>                             
                              <td>".$articulo['descripcion']."</td>
@@ -79,7 +80,7 @@ include("../head.php");
                              <td>".$articulo['S']."</td>
                              <td>".$articulo['B']."</td>
                              <td>".$articulo['V']."</td>
-                             <td><a href=''><img src='../assets/img/cleaner.png' style='width:42px;height:42px;border:0'></img></a></td>
+                             <td><a href='#' onclick='confirmarCancelacion(".$art.")'><img src='../assets/img/cleaner.png' style='width:42px;height:42px;border:0'></img></a></td>
                              <td><a href='../vista/modificarArticulo.php?codigo=".$articulo['codigo']."&descripcion=".$articulo['descripcion']."&eje=".$articulo['eje']."&aloj=".$articulo['aloj']."&esp=".$articulo['esp']."&form=".$articulo['form']."&giro=".$articulo['giro']."&G=".$articulo['G']."&S=".$articulo['S']."&B=".$articulo['B']."&V=".$articulo['V']."'><img src='../assets/img/modify.png' style='width:42px;height:42px;border:0'></img></a></td>                           
                          </tr>";
                     }
@@ -91,5 +92,16 @@ include("../head.php");
  </div>
  </div>
 </body>
+<script>
+    function confirmarCancelacion(num){
+                var ask = confirm("¿Seguro quieres eliminar el articulo?");
+                if (ask) {
+                    window.location.href="../controlador/controlador_cliente.php?numero="+num;
+                    
+                }else{
+                    window.location.href="../vista/articulos.php";
+                }
+        }
+</script>
 <footer></footer>
 </html>

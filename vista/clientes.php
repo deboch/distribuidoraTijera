@@ -43,13 +43,14 @@ include_once("../header.php");
                 <tbody>
                 <?php
                     foreach ($clientes as $cliente){
+                        $num_cliente = $cliente['numero'];
                         echo "<tr>
                              <td>".$cliente['numero']."</td>                             
                              <td>".$cliente['nombre']."</td>
                              <td>".$cliente['direccion']."</td>
                              <td>".$cliente['localidad']."</td>
                              <td>".$cliente['telefono']."</td>  
-                             <td><a href='../controlador/controlador_cliente.php?numero=".$cliente['numero']."'><img src='../assets/img/cleaner.png' style='width:42px;height:42px;border:0' title='Eliminar'></img></a></td>
+                             <td><a href='#' onclick='confirmarCancelacion(".$num_cliente.")' ><img src='../assets/img/cleaner.png' style='width:42px;height:42px;border:0' title='Eliminar'></img></a></td>
                              <td><a href='modificarCliente.php?numero=".$cliente['numero']."&nombre=".$cliente['nombre']."&direccion=".$cliente['direccion']."&localidad=".$cliente['localidad']."&telefono=".$cliente['telefono']."'><img src='../assets/img/modify.png' style='width:42px;height:42px;border:0' title='Modificar'></img></a></td>                           
                          </tr>";
                     }
@@ -59,6 +60,17 @@ include_once("../header.php");
 
 </div>
 </body>
+<script>
+    function confirmarCancelacion(num){
+                var ask = confirm("¿Seguro quieres eliminar el articulo?");
+                if (ask) {
+                    window.location.href="../controlador/controlador_cliente.php?numero="+num;
+                    
+                }else{
+                    window.location.href="../vista/clientes.php";
+                }
+        }
+</script>
 <footer>
 </footer>
 </html>

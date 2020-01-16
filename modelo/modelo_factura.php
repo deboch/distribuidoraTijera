@@ -123,7 +123,7 @@ function eliminar_art($id){
 	$sql = "DELETE FROM tmp WHERE id='$id'";
 	$delete = mysqli_query($conn, $sql);
 	if($delete){
-        echo "<script>alert('Se ha cancelado el pago de su reserva.'); window.location.href='../vista/factura.php?';</script>";
+        echo "<script>window.location.href='../vista/factura.php?';</script>";
     }
 	return $listas;
 }

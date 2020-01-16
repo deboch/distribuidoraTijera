@@ -1,4 +1,5 @@
 <?php
+
     include("../modelo/modelo_cliente.php");
    
     $cliente_num=$_POST['numero'];
