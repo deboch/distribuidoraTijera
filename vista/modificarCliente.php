@@ -38,10 +38,17 @@ include_once("../head.php");
 
                 </div>
                 <button class='btn btn-info float-right agregar' type='submit'>ACTUALIZAR</button>
-                <button class='btn btn-danger float-right agregar'><a href='../home.php' style='color:white!important'>CANCELAR</a></button>"
+                <button class='btn btn-danger float-right agregar'><a onclick='confirmarCancelacion()' style='color:white!important'>CANCELAR</a></button>"
          ?>      
         </form>       
 </div>
 </body>       
-
+<script>
+        function confimarCancelacion(){
+                var ask = confirm("¿Seguro quiere cancelar la reserva?");
+                if (ask) {
+                window.location.href="../vista/clientes.php";
+                }
+        }
+</script>
 </html>
