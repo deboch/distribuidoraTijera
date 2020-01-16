@@ -96,7 +96,7 @@ include("../head.php");
     function confirmarCancelacion(num){
                 var ask = confirm("¿Seguro quieres eliminar el articulo?");
                 if (ask) {
-                    window.location.href="../controlador/controlador_cliente.php?numero="+num;
+                    window.location.href="../controlador/controlador_articulos.php?numero="+num;
                     
                 }else{
                     window.location.href="../vista/articulos.php";

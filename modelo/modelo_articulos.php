@@ -77,3 +77,14 @@ function updateArticulo($cod ,$descr,$eje,$aloj,$esp,$form,$giro,$G,$S,$B,$V){
     mysqli_close($conn);
     return $articulos;
 }
+
+function deleteArticulo($nro_art){
+    $conn = getConexion();
+    $delete = "DELETE FROM articulo WHERE codigo='$nro_art'";
+    $result = mysqli_query($conn,$delete);
+    if($result){
+        echo "<script>alert('El cliente fué eliminado con éxito.'); window.location.href='../vista/articulos.php?';</script>";
+    }
+    mysqli_close($conn); 
+    
+}

@@ -9,5 +9,11 @@ if(isset($_GET["cod_art"])){
     }else{
         $articulos=getlistaArticulos();
     }
-	include("../vista/articulos.php");
+    
+}    
+if(isset($_GET["numero"])){
+    $nro_art=$_GET['numero'];
+    deleteArticulo($nro_art);
 }
+
+include_once("../vista/articulos.php");
