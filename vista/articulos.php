@@ -80,7 +80,7 @@ include("../head.php");
                              <td>".$articulo['B']."</td>
                              <td>".$articulo['V']."</td>
                              <td><a href=''><img src='../assets/img/cleaner.png' style='width:42px;height:42px;border:0'></img></a></td>
-                             <td><a href='modificarArticulo.php?codigo=".$articulo['codigo']."&descripcion=".$articulo['descripcion']."&eje=".$articulo['eje']."&aloj=".$articulo['aloj']."&esp=".$articulo['esp']."&form=".$articulo['form']."&giro=".$articulo['giro']."&G=".$articulo['G']."&S=".$articulo['S']."&B=".$articulo['B']."&V=".$articulo['V']."'><img src='../assets/img/modify.png' style='width:42px;height:42px;border:0'></img></a></td>                           
+                             <td><a href='../vista/modificarArticulo.php?codigo=".$articulo['codigo']."&descripcion=".$articulo['descripcion']."&eje=".$articulo['eje']."&aloj=".$articulo['aloj']."&esp=".$articulo['esp']."&form=".$articulo['form']."&giro=".$articulo['giro']."&G=".$articulo['G']."&S=".$articulo['S']."&B=".$articulo['B']."&V=".$articulo['V']."'><img src='../assets/img/modify.png' style='width:42px;height:42px;border:0'></img></a></td>                           
                          </tr>";
                     }
                 ?>
