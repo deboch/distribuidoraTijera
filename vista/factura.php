@@ -8,20 +8,6 @@ $listas = listar_factura();
 error_reporting(0);
 
 ?>
-<!-- <script type="text/javascript">
-	/* function buscar(){
-		var tipo_art=document.getElementById('tipo_art').value;
-		var codigo=document.getElementById('codigo').value;
-		window.location.href = 'http://localhost:8080/distribuidora/vista/factura.php?codigo='+codigo;
-	} */
-	function duplicar(){
-
-document.getElementById("cliente2").value = document.getElementById("cliente").value;
-document.getElementById("telefono2").value = document.getElementById("telefono").value;
-document.getElementById("fecha2").value = document.getElementById("fecha").value;
-
-}
-</script> -->
 
 <body>
 

@@ -11,7 +11,7 @@
     $G =$_POST['G'];
     $S =$_POST['S'];
     $B =$_POST['B'];
-    $v =$_POST['V'];
+    $V =$_POST['V'];
 
     $articulos=updateArticulo($cod ,$descr,$eje,$aloj,$esp,$form,$giro,$G,$S,$B,$V);
     echo "<script>window.location.href='../vista/articulos.php?';</script>";

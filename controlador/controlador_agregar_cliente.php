@@ -6,5 +6,6 @@
     $cliente_dir=$_POST['direccion'];
     $cliente_loc=$_POST['localidad'];
     $cliente_tel=$_POST['telefono'];
+
     $articulos=addCliente($cliente_num,$cliente_nom,$cliente_dir,$cliente_loc,$cliente_tel);
     

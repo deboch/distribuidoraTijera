@@ -10,7 +10,7 @@ include("../head.php");
 <br>
     <h2>AGREGAR CLIENTE</h2>
     <br><br>
-    <form method="post" action="../controlador/controlador_agregar_cliente.php?numero=&nombre=&direccion=&localidad=&telefono=">
+    <form method="POST" action="../controlador/controlador_agregar_cliente.php">
     <div class="table-responsive" id="tablaAgregar">
                 <table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
                     <thead>
