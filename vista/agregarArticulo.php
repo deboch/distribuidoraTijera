@@ -8,7 +8,7 @@ include("../head.php");
 <body>
 <div class="container">
 <br>
-    <h2>AGREGAR Articulo</h2>
+    <h2>AGREGAR ARTICULO</h2>
     <br><br>
     <form method="POST" action="../controlador/controlador_agregar_articulo.php">
     <div class="table-responsive" id="tablaAgregar">
@@ -47,8 +47,16 @@ include("../head.php");
 
     </div>
     <button class="btn btn-info float-right agregar" type="submit">AGREGAR</button>
-	<button class="btn btn-danger float-right agregar"><a href="../home.php" style="color:white!important">CANCELAR</a></button>
-    </form>
+	
+    </form><button class="btn btn-danger float-right agregar"><a onclick="confirmarCancelacion();" style="color:white!important">CANCELAR</a></button>
 </div>
 </body>
+<script>
+        function confirmarCancelacion(){
+                var ask = confirm("¿Seguro quiere cancelar?");
+                if (ask) {
+                window.location.href="../vista/articulos.php";
+                }
+        }
+</script>
 </html>

@@ -118,9 +118,9 @@ function agregar($codigo, $tipo, $descripcion,$precio, $cantidad){
 	$listas = listar_factura();
 	return $listas;
 }
-function eliminar_art($id){
+function eliminar_art($id, $tipo){
 	$conn = getConexion();
-	$sql = "DELETE FROM tmp WHERE id='$id'";
+	$sql = "DELETE FROM tmp WHERE id='$id' AND tipo='$tipo'";
 	$delete = mysqli_query($conn, $sql);
 	if($delete){
         echo "<script>window.location.href='../vista/factura.php?';</script>";

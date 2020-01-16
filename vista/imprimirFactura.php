@@ -220,9 +220,10 @@ function calcularBonificacion(elemento){
 					</div>
 					
 				<br><br><br><br><br><br>
-                <button class="btn btn-info float-right agregar"><a href="javascript:crearPdf()" style="color:white!important">DESCARGAR</a></button>
-				<button class="btn btn-danger float-right agregar"><a href="../home.php" style="color:white!important">CANCELAR</a></button>
+                <button class="btn btn-info float-right agregar"><a href="javascript:getPDF()" style="color:white!important">DESCARGAR</a></button>
+				
                 </form>
+				<button class="btn btn-danger float-right agregar"><a onclick='confirmarCancelacion()' style="color:white!important">CANCELAR</a></button>
     </div>            
         </body>
 <script>
@@ -249,6 +250,49 @@ function calcularBonificacion(elemento){
             }, margins
         );
     }
+	function getPDF(){
+        console.log("inicio");
+        var HTML_Width = $("#aImprimir").width();
+        var HTML_Height = $("#aImprimir").height();
+        var top_left_margin = 20;
+        var PDF_Width = HTML_Width+(top_left_margin*2);
+        var PDF_Height = (PDF_Width*1.5)+(top_left_margin*2);
+        var canvas_image_width = HTML_Width;
+        var canvas_image_height = HTML_Height;
+       
+        var totalPDFPages = Math.ceil(HTML_Height/PDF_Height)-1;
+         console.log(totalPDFPages);
+        
+        html2canvas($("#aImprimir")[0],{allowTaint:true}).then(function(canvas) {
+            canvas.getContext('2d');
+            
+            console.log(canvas.height+"  "+canvas.width);
+            
+            
+            var imgData = canvas.toDataURL("image/jpeg", 1.0);
+            var pdf = new jsPDF('p', 'pt',  [PDF_Width, PDF_Height]);
+                pdf.addImage(imgData, 'JPG', top_left_margin, top_left_margin,canvas_image_width,canvas_image_height);
+            
+            
+            for (var i = 1; i <= totalPDFPages; i++) { 
+            pdf.addPage(PDF_Width, PDF_Height);
+            pdf.addImage(imgData, 'JPG', top_left_margin, -(PDF_Height*i)+(top_left_margin*4),canvas_image_width,canvas_image_height);
+            }
+            console.log("salio del for");
+            pdf.save("ListaDePrecios.pdf");
+        });
+    };
+
+    function confirmarCancelacion(){
+                var ask = confirm("¿Seguro quieres cancelar?");
+                if (ask) {
+                    window.location.href="../vista/factura.php?";
+                    
+                }else{
+                    window.location.href="../vista/imprimirFactura.php?";
+                }
+        }
+
 </script>
 
 </html>

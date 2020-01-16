@@ -67,10 +67,10 @@ include("../head.php");
    
     
         <button type="button" class="btn btn-info agregar float-right"><a href="agregarArticulo.php" style="color:white!important">AGREGAR</a></button> 
-        <button class="btn btn-info agregar float-right"><a href="javascript:getPDF()" style="color:white!important">DESCARGAR</a></button> 
+        <button class="btn btn-info agregar float-right"><a href="javascript:getPDF();" style="color:white!important">DESCARGAR</a></button> 
         
         <br>
-        <div class="table-wrapper-scroll-y my-custom-scrollbar" id="aImprimir">    
+        <div class="table-wrapper-scroll-y my-custom-scrollbar" id="aImprimir" class="aImprimir">    
                 <table class="table table-bordered table-striped mb-0" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                     <tr>
@@ -94,8 +94,8 @@ include("../head.php");
                                 <td>".$articulo['S']."</td>
                                 <td>".$articulo['B']."</td>
                                 <td>".$articulo['V']."</td>
-                                <td><a href='modificarPrecioArticulo.php?codigo=".$articulo['codigo']."&descripcion=".$articulo['descripcion']."&G=".$articulo['G']."&S=".$articulo['S']."&B=".$articulo['B']."&V=".$articulo['V']."'><img src='../assets/img/modify.png' style='width:42px;height:42px;border:0' title='Modificar' id='modificar'></img></a></td>
-                                <td><a href=''><img id='eliminar' src='../assets/img/cleaner.png' style='width:42px;height:42px;border:0' title='Eliminar'></img></a></td>                         
+                                <td><a href='modificarPrecioArticulo.php?codigo=".$articulo['codigo']."&descripcion=".$articulo['descripcion']."&G=".$articulo['G']."&S=".$articulo['S']."&B=".$articulo['B']."&V=".$articulo['V']."'><img class='foto' src='../assets/img/modify.png' style='width:42px;height:42px;border:0' title='Modificar' id='modificar'></img></a></td>
+                                <td><a href=''><img class='foto' id='eliminar' src='../assets/img/cleaner.png' style='width:42px;height:42px;border:0' title='Eliminar'></img></a></td>                         
                             </tr>";
                         }
                     ?>
@@ -139,10 +139,15 @@ function addPorcent(){
         );
     }
     function getPDF(){
+        var campos= document.getElements.getByClassName("foto");
+        var cant = campos.length;
+        for (i=0;i<cant;i++){
+            campos[i].hidden=true;
+        }  
         console.log("inicio");
         var HTML_Width = $("#aImprimir").width();
         var HTML_Height = $("#aImprimir").height();
-        var top_left_margin = 20;
+        var top_left_margin = 10;
         var PDF_Width = HTML_Width+(top_left_margin*2);
         var PDF_Height = (PDF_Width*1.5)+(top_left_margin*2);
         var canvas_image_width = HTML_Width;

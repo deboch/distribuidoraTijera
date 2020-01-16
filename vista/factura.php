@@ -117,7 +117,7 @@ error_reporting(0);
 								 <td>".$lista['descripcion']."</td>
 								 <td>".$lista['precio']."</td>
 								 <td>".$lista['total']."</td>  
-								 <td><a href='../controlador/controlador_factura2.php?accion=".$lista['id']."'><img src='../assets/img/cleaner.png' style='width:25px;height:25px;border:0' title='Eliminar'></img></a></td>                         
+								 <td><a href='../controlador/controlador_factura2.php?accion=".$lista['id']."&tipo=".$lista['tipo']."'><img src='../assets/img/cleaner.png' style='width:25px;height:25px;border:0' title='Eliminar'></img></a></td>                         
 							 </tr>";
 							 $total = $lista['total'] + $total;
 						}

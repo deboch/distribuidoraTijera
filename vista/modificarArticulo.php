@@ -99,12 +99,21 @@ include_once("../head.php");
                 </div>
                 <div class='col-md-12'>
                 <br>
-                <button type='submit' class='btn btn-danger float-right' style='margin-top: 8px'> <a href='../vista/articulos.php' style='color:white!important'>Cancelar</a></button>
-		<button type='submit' class='btn btn-info float-right' style='margin-top: 8px'>Actualizar</button>
+                
+                <button type='submit' class='btn btn-info float-right' style='margin-top: 8px'>Actualizar</button>
+                <button type='submit' class='btn btn-danger float-right' style='margin-top: 8px'> <a onclick='confimarCancelacion()' style='color:white!important'>Cancelar</a></button>
 		</div>
                 "
          ?>      
         </form>       
 </div>
 </body>
+<script>
+        function confimarCancelacion(){
+                var ask = confirm("¿Seguro quiere cancelar?");
+                if (ask) {
+                window.location.href="../vista/articulos.php";
+                }
+        }
+</script>
 </html>
