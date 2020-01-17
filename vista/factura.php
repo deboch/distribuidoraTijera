@@ -111,7 +111,7 @@ error_reporting(0);
 						<?php
 						foreach($listas as $lista){
 							echo "<tr>
-								 <td>".$lista['id']."</td>                             
+								 <td>".$lista['codigo']."</td>                             
 								 <td>".$lista['tipo']."</td>
 								 <td>".$lista['cantidad']."</td>
 								 <td>".$lista['descripcion']."</td>

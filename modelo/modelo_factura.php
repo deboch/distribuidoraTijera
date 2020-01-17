@@ -89,7 +89,7 @@ function listar_factura(){
 				// $sql = "INSERT INTO tmp (id, tipo, descripcion, precio, cantidad) VALUES ('$codigo', '$tipo', '$descripcion', '$precio', '$cantidad')";
 				// $insert = mysqli_query($conn, $sql);
 				
-				$sql2 = "SELECT DISTINCT id, tipo, descripcion, precio, cantidad from tmp";
+				$sql2 = "SELECT id, codigo, tipo, descripcion, precio, cantidad from tmp";
 				$result = mysqli_query($conn, $sql2);
 				$listas=Array();
 				
@@ -98,6 +98,7 @@ function listar_factura(){
 						$lista=Array();
 						$lista['suma_total']=0;
 						$lista['id'] = $row['id'];
+						$lista['codigo'] = $row['codigo'];
 						$lista['tipo']= $row['tipo'];
 						$lista['descripcion'] = $row['descripcion'];
 						$lista['precio'] = $row['precio'];
@@ -113,7 +114,7 @@ function listar_factura(){
 }
 function agregar($codigo, $tipo, $descripcion,$precio, $cantidad){
 	$conn = getConexion();
-	$sql = "INSERT INTO tmp (id, tipo, descripcion, precio, cantidad) VALUES ('$codigo', '$tipo', '$descripcion', '$precio', '$cantidad')";
+	$sql = "INSERT INTO tmp (codigo, tipo, descripcion, precio, cantidad) VALUES ('$codigo', '$tipo', '$descripcion', '$precio', '$cantidad')";
 	$insert = mysqli_query($conn, $sql);
 	$listas = listar_factura();
 	return $listas;

@@ -111,7 +111,7 @@ function calcularBonificacion(elemento){
 						<?php
                             require_once("../conexion.php");
                             $conn = getConexion();
-                            $sql2 = "SELECT DISTINCT id, tipo, descripcion, precio, cantidad from tmp";
+                            $sql2 = "SELECT DISTINCT codigo, tipo, descripcion, precio, cantidad from tmp";
                             $result = mysqli_query($conn, $sql2);
                             $listas=Array();
                             
@@ -119,7 +119,7 @@ function calcularBonificacion(elemento){
                                 while ($row = mysqli_fetch_assoc($result)) {
                                     $lista=Array();
                                     $lista['suma_total']=0;
-                                    $lista['id'] = $row['id'];
+                                    $lista['codigo'] = $row['codigo'];
                                     $lista['tipo']= $row['tipo'];
                                     $lista['descripcion'] = $row['descripcion'];
                                     $lista['precio'] = $row['precio'];
@@ -134,7 +134,7 @@ function calcularBonificacion(elemento){
                             $total=0;
                             foreach($listas as $lista){
                                 echo "<tr>
-                                    <td>".$lista['id']."</td>                             
+                                    <td>".$lista['codigo']."</td>                             
                                     <td>".$lista['tipo']."</td>
                                     <td>".$lista['cantidad']."</td>
                                     <td>".$lista['descripcion']."</td>
