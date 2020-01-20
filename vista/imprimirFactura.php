@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
-<?php
-include_once("../head.php");
-?>
+
 <script type="text/javascript">
 	
 	function cargarCliente(){
@@ -10,7 +8,14 @@ include_once("../head.php");
 document.getElementById("cliente").innerHTML = document.getElementById("cliente").value;
 document.getElementById("telefono").innerHTML = document.getElementById("telefono").value;
 document.getElementById("fecha").innerHTML = document.getElementById("fecha").value;
-	
+document.getElementById("nombreVendedor").innerHTML = document.getElementById("nombreVendedor").value;
+document.getElementById("telefonoVendedor").innerHTML = document.getElementById("telefonoVendedor").value;
+document.getElementById("lugar").innerHTML = document.getElementById("lugar").value; 
+document.getElementById("plazo").innerHTML = document.getElementById("plazo");
+document.getElementById('formaPago').innerHTML = document.getElementById("formaPago");
+document.getElementById('total').innerHTML = document.getElementById("total").value; 
+document.getElementById('conDescuento').innerHTML = document.getElementById("conDescuento");
+//document.getElementById("bonificacion").innerHTML = document.getElementById("bonificacion");
 }
 function calcularBonificacion(elemento){
 	var bonificacion = elemento.value;
@@ -19,11 +24,15 @@ function calcularBonificacion(elemento){
 	
 	}
 </script>
+
+<?php
+include_once("../head.php");
+?>
 <body>
 
-	<div class="container" id="aImprimir">
+	<div class="container"  id="aImprimir" >
 		<div class="row">
-			<div class="col-md-6 tituloFactura">
+			<div class="col-md-6 offset-4">
 				<br>
 				<h1>Repuesto del automotor</h1>
 			</div>
@@ -46,9 +55,9 @@ function calcularBonificacion(elemento){
 		</div>	
 		<br><br>
         
-		<div class="row" >
+		<div class="row" style="font-size: 12px;" >
 			<div class="col-md-12">
-				<div class="row">
+				<div class="row" >
 					<div class="col-md-2">
 						<label class="">Vendedor:</label>	
 					</div>
@@ -94,7 +103,7 @@ function calcularBonificacion(elemento){
 			</div> 
 		</div>
 		<br>
-        <table class="table table-striped" id="mitabla">
+        <table class="table table-striped" id="mitabla" style="font-size: 12px;">
 				<thead>
 					<tr>
 					<th scope="col">Articulo</th>
@@ -154,36 +163,37 @@ function calcularBonificacion(elemento){
 						<div class="separador"></div>
 					</div>
 				</div>
-				<div class="row">
+				<br>
+				<div class="row" style="font-size: 12px;">
 				<div class="col-md-8">
-					<h4>Observaciones:</h4>
-					<h5>Bonificacion Global (%)</h5>
+					<label>Observaciones:</label>
+					<label>Bonificacion Global (%)</label>
 					<input type="text" name="bonificacion" id="bonificacion" value="" onchange="calcularBonificacion('bonificaciion');">
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-4" style="font-size: 12px;">
 					
 					<?php
 						echo "<div class='row'>
 									<div class='col-md-8' >
-										<h4 style='float:right;'>SubTotal: $</h4>
+										<label style='float:right;'>SubTotal: $</label>
 									</div>
 									<div class='col-md-4'>	
-										<h4>".$total."</h4><input class='form-control' type='text' name='total' id='total' value= '".$total."' hidden='hidden'>
+										<label>".$total."</label><input class='form-control' type='text' name='total' id='total' value= '".$total."' hidden='hidden'>
 									</div>
 								</div>
 								<div class='row'>
 									<div class='col-md-8'>
-										<h4 style='float:right;'>Total Bonificado: $</h4>
+										<label style='float:right;'>Total Bonificado: $</label>
 									</div>
 									<div class='col-md-4'>
 										<input class='form-control' type='text' name='conDescuento' id='conDescuento'>	
 									</div>
 								</div>"	;
 					?>	
-
+				</form>
 				</div>
 				</div>
-					<br><br>
+					<br>
 					<div class="row">
 						<div class="col-md-12">
 						<div class="separador"></div>
@@ -191,53 +201,73 @@ function calcularBonificacion(elemento){
 					</div>
 					<br>
 				<div class="FormaDePago">
-					<div class="row">
-						<h5>Forma de pago: Cheque pago diferido 7 días fecha factura.
+					<div class="row" style="font-size: 12px;">
+						<p>Forma de pago: Cheque pago diferido 7 días fecha factura.
 						Transcurrido dicho plazo, se ajustará de acuerdo al valor del dólar estaunidense, tipo
-						vendedor Banco Nación del día anterior al del efectivo pago.-</h5>
+						vendedor Banco Nación del día anterior al del efectivo pago.-</p>
 					</div>
 					<br>
-					<div class="row">
+					<div class="row" style="font-size: 12px;">
 					<div class="col-md-3">
-						<h5>Forma de pago :</h5> 
+						<label>Forma de pago :</label> 
 					</div>
 					<div class="col-md-3">
-						<select class="form-control" name="formaDePago">
-								<option value="">Efectivo</option>
-								<option value="">Cheque</option>
-								<option value="">Tarjeta de crédito</option>
-								<option value="">Tarjeta de débito</option>
+						<select class="form-control" name="formaDePago" id="formaPago">
+								<option value="Efectivo">Efectivo</option>
+								<option value="Cheque">Cheque</option>
+								<option value="Credito">Tarjeta de crédito</option>
+								<option value="Debito">Tarjeta de débito</option>
 						</select>
 					</div>
 					</div>
-					<div class="row">
+					<div class="row" style="font-size: 12px;">
 						<div class="col-md-3">
-							<h5>Plazo de entrega:</h5>
+							<label>Plazo de entrega:</label>
 						</div>
 						<div class="col-md-3">
-							<input class="form-control" type="number" min="0">
+							<input class="form-control" type="number" min="0" id="plazo">
 						</div>
 					</div>
 					
 				<br><br><br><br><br><br>
-                <button class="btn btn-info float-right agregar"><a href="javascript:getPDF()" style="color:white!important">DESCARGAR</a></button>
 				
-                </form>
-				<button class="btn btn-danger float-right agregar"><a onclick='confirmarCancelacion()' style="color:white!important">CANCELAR</a></button>
-    </div>            
+                 <button class="btn btn-info float-right agregar"><a href="javascript:getPDF()" style="color:white!important">DESCARGAR</a></button>
+				<!-- <input type="hidden" name="hidden_html" id="hidden_html" /> -->
+				<!-- <input type="submit" class="btn btn-primary" id="crearPdf" value="Descargar Pdf"/> -->
+            
+				
+    </div>
+	<button class="btn btn-danger float-right agregar"><a onclick='confirmarCancelacion()' style="color:white!important">Cancelar</a></button>            
         </body>
 <script>
+$(document).ready(function(){
+
+$('#crearPdf').click(function(){
+									$('#hidden_html').val($('#aImprimir').html());
+									$('#make_pdf').submit();
+								});
+ 
+});
+
     function crearPdf() {
-        var pdf = new jsPDF('p', 'pt', 'letter');
-        //source = $('#aImprimir')[0];
+        var pdf = new jsPDF('p', 'pt', 'A4');
+        source = $('#aImprimir')[0];
         specialElementHandlers = {
             '#bypassme': function (element, renderer) {
                 return true
             }
         };
+		pdf.setFontType("normal");
+		pdf.setFontSize(11);
         margins = {
-            
+            top: 48,
+            bottom: 24,
+            left: 36,
+            width:'100%',
+			height: '100%',
+			right: 12
         };
+
         pdf.fromHTML(
             aImprimir,
             margins.left, // x coord
