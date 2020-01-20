@@ -13,9 +13,10 @@ document.getElementById("fecha").innerHTML = document.getElementById("fecha").va
 	
 }
 function calcularBonificacion(elemento){
-	var bonificacion = elemento.value;
-	var conDescuento = document.getElementById("conDescuento").value;
-	conDescuento = conDescuento*(bonificacion/100);
+    debugger;
+	var bonificacion = document.getElementById(elemento).value;
+	var total = document.getElementById("total");
+	conDescuento.value = total.value*(bonificacion/100);
 	
 	}
 </script>
@@ -158,7 +159,7 @@ function calcularBonificacion(elemento){
 				<div class="col-md-8">
 					<h4>Observaciones:</h4>
 					<h5>Bonificacion Global (%)</h5>
-					<input type="text" name="bonificacion" id="bonificacion" value="" onchange="calcularBonificacion('bonificaciion');">
+					<input type="text" name="bonificacion" id="bonificacion" value="" onchange="calcularBonificacion('bonificacion');">
 				</div>
 				<div class="col-md-4">
 					

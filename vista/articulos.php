@@ -28,7 +28,7 @@ include("../head.php");
         <div class="card shadow mb-4">
         <div class="card-body">
             <div class="card-header py-3">
-                <form method="get" action="../controlador/controlador_articulo.php">
+                <form method="get" action="../controlador/controlador_articulos.php">
                     <div class="row">
 						<div class="col-md-2">
                             <input class="form-control" type="text" placeholder="Articulo" id="cod_art" name="cod_art">    
