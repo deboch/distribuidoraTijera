@@ -18,9 +18,10 @@ document.getElementById('conDescuento').innerHTML = document.getElementById("con
 //document.getElementById("bonificacion").innerHTML = document.getElementById("bonificacion");
 }
 function calcularBonificacion(elemento){
-	var bonificacion = elemento.value;
-	var conDescuento = document.getElementById("conDescuento").value;
-	conDescuento = conDescuento*(bonificacion/100);
+    debugger;
+	var bonificacion = document.getElementById(elemento).value;
+	var total = document.getElementById("total");
+	conDescuento.value = total.value*(bonificacion/100);
 	
 	}
 </script>
