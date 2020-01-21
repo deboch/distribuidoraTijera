@@ -1,26 +1,6 @@
 <!DOCTYPE html>
 <html>
 
-<script type="text/javascript">
-	
-	function cargarCliente(){
-
-document.getElementById("cliente").innerHTML = document.getElementById("cliente").value;
-document.getElementById("telefono").innerHTML = document.getElementById("telefono").value;
-document.getElementById("fecha").innerHTML = document.getElementById("fecha").value;
-document.getElementById("nombreVendedor").innerHTML = document.getElementById("nombreVendedor").value;
-document.getElementById("telefonoVendedor").innerHTML = document.getElementById("telefonoVendedor").value;
-document.getElementById("lugar").innerHTML = document.getElementById("lugar").value; 
-document.getElementById("plazo").innerHTML = document.getElementById("plazo");
-document.getElementById('formaPago').innerHTML = document.getElementById("formaPago");
-document.getElementById('total').innerHTML = document.getElementById("total").value;
-document.getElementById('descuento').innerHTML = document.getElementById("descuento").value; 
-document.getElementById('conDescuento').innerHTML = document.getElementById("conDescuento");
-//document.getElementById("bonificacion").innerHTML = document.getElementById("bonificacion");
-}
-
-</script>
-
 <?php
 include_once("../head.php");
 ?>

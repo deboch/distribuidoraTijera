@@ -13,14 +13,28 @@ function eliminarFila(){
 }
 function calcularBonificacion(){
   console.log("entro a la funcion");
-  debugger;
-  var bonificacion = document.getElementById("bonificacion").value;
-  var descuento = document.getElementById("descuento").value;
-  var total = document.getElementById("total").value;
-  var totalConDescuento = document.getElementById("conDescuento").value;
-  
-  totalConDescuento = total*(1-(bonificacion/100));
-  descuento = total-totalConDescuento;
+  var bonificacion = document.getElementById("bonificacion");
+  var descuento = document.getElementById("descuento");
+  var total = document.getElementById("total");
+  var totalConDescuento = document.getElementById("conDescuento");
+  totalConDescuento.value = total.value*(1-(bonificacion.value/100));
+  descuento.value = total.value-totalConDescuento.value;
 
 }
+
+function cargarCliente(){
+
+  document.getElementById("cliente").innerHTML = document.getElementById("cliente").value;
+  document.getElementById("telefono").innerHTML = document.getElementById("telefono").value;
+  document.getElementById("fecha").innerHTML = document.getElementById("fecha").value;
+  document.getElementById("nombreVendedor").innerHTML = document.getElementById("nombreVendedor").value;
+  document.getElementById("telefonoVendedor").innerHTML = document.getElementById("telefonoVendedor").value;
+  document.getElementById("lugar").innerHTML = document.getElementById("lugar").value; 
+  document.getElementById("plazo").innerHTML = document.getElementById("plazo");
+  document.getElementById('formaPago').innerHTML = document.getElementById("formaPago");
+  document.getElementById('total').innerHTML = document.getElementById("total").value;
+  document.getElementById('descuento').innerHTML = document.getElementById("descuento").value; 
+  document.getElementById('conDescuento').innerHTML = document.getElementById("conDescuento").value;
+  document.getElementById("bonificacion").innerHTML = document.getElementById("bonificacion");
+  }
 
