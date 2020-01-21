@@ -42,7 +42,7 @@ error_reporting(0);
 					<div class="col-md-4">		
 							<div class="row">
 								<div class="col-md-6">
-									<input class="form-control" type="text" placeholder="Ingrese artículo" id="cod_art" name="cod_art">    
+									<input class="form-control" type="text" placeholder="Ingrese artículo" id="cod_art" name="cod_art" onchange="validarSiNumero(this);">    
 								</div>
 								<div class="col-md-3">
 									<select class="form-control" id="tipo" name="tipo">

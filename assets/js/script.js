@@ -23,4 +23,11 @@ function calcularBonificacion(){
   descuento = total-totalConDescuento;
 
 }
+function validarSiNumero(elemento){
+  var numero= document.getElementById(elemento).value;
+  if (!/^([0-9])*$/.test(numero)){
+      
+      document.getElementById(elemento).value="";
+  }              
+}
 

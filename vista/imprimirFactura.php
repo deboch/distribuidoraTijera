@@ -211,18 +211,32 @@ include_once("../head.php");
 						vendedor Banco Nación del día anterior al del efectivo pago.-</p>
 					</div>
 					<br>
-					<div class="row" style="font-size: 12px;">
-					<div class="col-md-3">
-						<label>Forma de pago :</label> 
-					</div>
-					<div class="col-md-3">
-						<select class="form-control" name="formaDePago" id="formaPago">
-								<option value="Efectivo">Efectivo</option>
-								<option value="Cheque">Cheque</option>
-								<option value="Credito">Tarjeta de crédito</option>
-								<option value="Debito">Tarjeta de débito</option>
-						</select>
-					</div>
+					
+					<div class="row" style="font-size: 12px;"> 
+                              <div class="col-md-3">
+                                <label for="FormaDePago" class="control-label">Forma de pago:</label>
+                              </div>           
+                              <div class="col-md-9">
+                                  <div class="form-check form-check-inline">
+                                      <input class="form-check-input"  onclick="uncheckRadio(this);" type="radio" name="formaDePago" id="EF" value="EF">
+                                      <label class="form-check-label" for="EF">EFECTIVO</label>
+                                    </div>
+                                    <div class="form-check form-check-inline"> 
+                                      <input class="form-check-input" onclick="uncheckRadio(this);" type="radio" name="formaDePago" id="CH" value="CH">
+                                      <label class="form-check-label" for="CH">CHEQUE</label>
+                                    </div>
+									<div class="form-check form-check-inline"> 
+                                      <input class="form-check-input" onclick="uncheckRadio(this);" type="radio" name="formaDePago" id="TC" value="TC">
+                                      <label class="form-check-label" for="TC">TARJETA DE CR&EacuteDITO</label>
+                                    </div>
+									<div class="form-check form-check-inline"> 
+                                      <input class="form-check-input" onclick="uncheckRadio(this);" type="radio" name="formaDePago" id="TD" value="TD">
+                                      <label class="form-check-label" for="TD">TARJETA DE D&EacuteBITO</label>
+                                    </div>
+                              </div>
+                              
+                            
+                            </div>  
 					</div>
 					<div class="row" style="font-size: 12px;">
 						<div class="col-md-3">
