@@ -4,7 +4,7 @@ function getlistaPrecios(){
     $conn = getConexion();
     $sql = "SELECT a.codigo, a.descripcion, pv.G, pv.S, pv.B, pv.V FROM articulo a JOIN precio_venta pv ON a.codigo=pc.codigo";
     $result = mysqli_query($conn, $sql);
-
+    
     $articulos = Array();
 
     if(mysqli_num_rows($result)> 0)
