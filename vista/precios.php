@@ -66,7 +66,7 @@ include("../head.php");
     </div>
    
     
-        <button type="button" class="btn btn-info agregar float-right"><a href="agregarArticulo.php" style="color:white!important">AGREGAR</a></button> 
+        <!-- <button type="button" class="btn btn-info agregar float-right"><a href="agregarArticuloPrecio.php" style="color:white!important">AGREGAR</a></button>  -->
         <button class="btn btn-info agregar float-right"><a href="javascript:getPDF();" style="color:white!important">DESCARGAR</a></button> 
         
         <br>
@@ -81,7 +81,7 @@ include("../head.php");
                         <th>B($)</th>
                         <th>V($)</th>
                         <th></th>
-                        <th></th>
+                       
                     </tr>
                     </thead>
                     <tbody>
@@ -94,8 +94,8 @@ include("../head.php");
                                 <td>".$articulo['S']."</td>
                                 <td>".$articulo['B']."</td>
                                 <td>".$articulo['V']."</td>
-                                <td><a href='modificarPrecioArticulo.php?codigo=".$articulo['codigo']."&descripcion=".$articulo['descripcion']."&G=".$articulo['G']."&S=".$articulo['S']."&B=".$articulo['B']."&V=".$articulo['V']."'><img class='foto' src='../assets/img/modify.png' style='width:42px;height:42px;border:0' title='Modificar' id='modificar'></img></a></td>
-                                <td><a href=''><img class='foto' id='eliminar' src='../assets/img/cleaner.png' style='width:42px;height:42px;border:0' title='Eliminar'></img></a></td>                         
+                                <td><a href='../vista/modificarPrecioArticulo.php?codigo=".$articulo['codigo']."&descripcion=".$articulo['descripcion']."&G=".$articulo['G']."&S=".$articulo['S']."&B=".$articulo['B']."&V=".$articulo['V']."'><img class='foto' src='../assets/img/modify.png' style='width:42px;height:42px;border:0' title='Modificar' id='modificar'></img></a></td>
+                                                        
                             </tr>";
                         }
                     ?>

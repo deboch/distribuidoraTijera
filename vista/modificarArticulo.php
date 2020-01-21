@@ -101,7 +101,7 @@ include_once("../head.php");
                 <br>
                 
                 <button type='submit' class='btn btn-info float-right' style='margin-top: 8px'>Actualizar</button>
-                <button type='submit' class='btn btn-danger float-right' style='margin-top: 8px'> <a onclick='confimarCancelacion()' style='color:white!important'>Cancelar</a></button>
+                <button type='button' class='btn btn-danger float-right' style='margin-top: 8px'> <a onclick='confimarCancelacion()' style='color:white!important'>Cancelar</a></button>
 		</div>
                 "
          ?>      

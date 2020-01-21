@@ -27,7 +27,7 @@ include_once("../head.php");
                         </thead>
                         <tbody>
                                 <tr>
-                                <td><input class='form-control' type='text' value='".$cliente_num."' name='numero'></td>                             
+                                <td><input class='form-control' type='text' value='".$cliente_num."' name='numero' readOnly></td>                             
                                 <td><input class='form-control' type='text' value='".$cliente_nom."' name='nombre'></td>
                                 <td><input class='form-control' type='text' value='".$cliente_dir."' name='direccion'></td>
                                 <td><input class='form-control' type='text' value='".$cliente_loc."' name='localidad'></td>
@@ -38,7 +38,7 @@ include_once("../head.php");
 
                 </div>
                 <button class='btn btn-info float-right agregar' type='submit'>ACTUALIZAR</button>
-                <button class='btn btn-danger float-right agregar'><a onclick='confimarCancelacion()' style='color:white!important'>CANCELAR</a></button>"
+                <button type='button' class='btn btn-danger float-right agregar'><a onclick='confimarCancelacion()' style='color:white!important'>CANCELAR</a></button>"
          ?>      
         </form>       
 </div>

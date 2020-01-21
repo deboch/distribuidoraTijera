@@ -60,7 +60,7 @@ function getlistaPreciosVentas(){
 }
 function getPrecioArticulo($codigo){
     $con = getConexion(); 
-    $sql = "SELECT a.codigo, a.descripcion, pc.G, pc.S, pc.B, pc.V FROM articulo a JOIN precio_costo pc ON pc.codigo= '$codigo' AND a.codigo = '$codigo'";
+    $sql = "SELECT a.codigo, a.descripcion, pc.G, pc.S, pc.B, pc.V FROM articulo a JOIN precio_venta pc ON pc.codigo= '$codigo' AND a.codigo = '$codigo'";
     $result=mysqli_query($con,$sql);
     $articulos = Array();
 
@@ -85,13 +85,13 @@ function getPrecioArticulo($codigo){
     mysqli_close($con);
     return $articulos;
 }
-function updateArticulo($id,$descripcion,$G,$S,$B,$V){
+function updatePrecioVentaArticulo($id, $G, $S, $B, $V){
     $conn = getConexion();
-    $sql1 = "UPDATE articulo set articulo.descripcion='$descripcion' WHERE articulo.codigo = $id";
-    $sql2 = "UPDATE precio_costo set precio_costo.G='$G',precio_costo.S='$S',precio_costo.B='$B' precio_costo.V='$V' WHERE precio_costo.codigo=$id";
-    $result = mysqli_query($conn, $sql1);
+    
+    $sql2 = "UPDATE precio_venta set precio_venta.G='$G', precio_venta.S='$S', precio_venta.B= '$B', precio_venta.V='$V' WHERE precio_venta.codigo='$id'";
+    
     $result = mysqli_query($conn, $sql2);
-    $articulos=getlistaPrecios();
+    $articulos=getlistaPreciosVentas();
     mysqli_close($conn);
     return $articulos;
 

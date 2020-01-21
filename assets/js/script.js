@@ -13,8 +13,14 @@ function eliminarFila(){
 }
 function calcularBonificacion(){
   console.log("entro a la funcion");
+  debugger;
   var bonificacion = document.getElementById("bonificacion").value;
+  var descuento = document.getElementById("descuento").value;
   var total = document.getElementById("total").value;
-  document.getElementById("conDescuento").value =  total*(1-(bonificacion/100));
+  var totalConDescuento = document.getElementById("conDescuento").value;
+  
+  totalConDescuento = total*(1-(bonificacion/100));
+  descuento = total-totalConDescuento;
+
 }
 

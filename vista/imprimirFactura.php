@@ -13,17 +13,12 @@ document.getElementById("telefonoVendedor").innerHTML = document.getElementById(
 document.getElementById("lugar").innerHTML = document.getElementById("lugar").value; 
 document.getElementById("plazo").innerHTML = document.getElementById("plazo");
 document.getElementById('formaPago').innerHTML = document.getElementById("formaPago");
-document.getElementById('total').innerHTML = document.getElementById("total").value; 
+document.getElementById('total').innerHTML = document.getElementById("total").value;
+document.getElementById('descuento').innerHTML = document.getElementById("descuento").value; 
 document.getElementById('conDescuento').innerHTML = document.getElementById("conDescuento");
 //document.getElementById("bonificacion").innerHTML = document.getElementById("bonificacion");
 }
-function calcularBonificacion(elemento){
-    debugger;
-	var bonificacion = document.getElementById(elemento).value;
-	var total = document.getElementById("total");
-	conDescuento.value = total.value*(bonificacion/100);
-	
-	}
+
 </script>
 
 <?php
@@ -180,6 +175,14 @@ include_once("../head.php");
 									</div>
 									<div class='col-md-4'>	
 										<label>".$total."</label><input class='form-control' type='text' name='total' id='total' value= '".$total."' hidden='hidden'>
+									</div>
+								</div>
+								<div class='row'>
+									<div class='col-md-8'>
+										<label style='float:right;'>Descuento: $</label>
+									</div>
+									<div class='col-md-4'>
+										<input class='form-control' type='text' name='descuento' id='descuento'>	
 									</div>
 								</div>
 								<div class='row'>
