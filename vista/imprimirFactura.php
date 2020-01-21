@@ -52,13 +52,13 @@ include_once("../head.php");
 						<label class="">Teléfono:</label>
 					</div>
 					<div class="col-md-4">   
-						<input class="form-control" type="text" id="telefonoVendedor" onChange="cargarCliente()" value="(+54-11)4487-2174">
+						<input class="form-control" type="text" id="telefonoVendedor" onChange="cargarCliente(),validarSiNumero(this);" value="(+54-11)4487-2174">
 					</div>
 					<div class="col-md-2">
 						<label class="">Teléfono:</label>
 					</div>
 					<div class="col-md-4">   
-						<input class="form-control" type="text" placeholder="Ingrese teléfono" id="telefono" onChange="cargarCliente()">
+						<input class="form-control" type="text" placeholder="Ingrese teléfono" id="telefono" onChange="cargarCliente(),validarSiNumero(this);">
 					</div>
 				</div>
 				<div class="row">
@@ -144,7 +144,7 @@ include_once("../head.php");
 				<div class="col-md-8">
 					<label>Observaciones:</label>
 					<label>Bonificacion Global (%)</label>
-					<input type="text" name="bonificacion" id="bonificacion" value="" onchange="calcularBonificacion('bonificaciion');">
+					<input type="text" name="bonificacion" id="bonificacion" value="" onchange="calcularBonificacion('bonificacion');">
 				</div>
 				<div class="col-md-4" style="font-size: 12px;">
 					
@@ -162,7 +162,7 @@ include_once("../head.php");
 										<label style='float:right;'>Descuento: $</label>
 									</div>
 									<div class='col-md-4'>
-										<input class='form-control' type='text' name='descuento' id='descuento'>	
+										<input class='form-control' type='text' name='descuento' id='descuento' >	
 									</div>
 								</div>
 								<div class='row'>

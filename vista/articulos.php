@@ -31,7 +31,7 @@ include("../head.php");
                 <form method="get" action="../controlador/controlador_articulos.php">
                     <div class="row">
 						<div class="col-md-2">
-                            <input class="form-control" type="text" placeholder="Articulo" id="cod_art" name="cod_art">    
+                            <input class="form-control" type="text" placeholder="Articulo" id="cod_art" name="cod_art" onchange="validarSiNumero(this);">    
                         </div>
 						<div class="col-md-3">
                         <button class="btn btn-info" type="submit">BUSCAR</button>

@@ -23,7 +23,7 @@ include("../head.php");
                         <h5>Ingrese porcentaje a modificar:</h5>
                     </div>
                         <div class="col-md-2">
-                            <input class="form-control" type="text" name="porcentajeMaterial" id="porcentajeMaterial" onChange="addPorcent();">
+                            <input class="form-control" type="text" name="porcentajeMaterial" id="porcentajeMaterial" onChange="validarPorcentaje(this)">
                         </div>
                         <div class="col-md-1">
                             <h5> en </h5>
@@ -50,11 +50,11 @@ include("../head.php");
             <div class="card-header py-3">
                 <form method="get" action="../controlador/controlador_precio.php">
                     <div class="row" style="border: solid 0.3px #dcdddc; padding: 20px;">
-                        <div class=col-md-3>
-                            <h5>Ingrese Artículo:</h5>
+                        <div class=col-md-2>
+                            <h5>Buscar:</h5>
                         </div>
 						<div class="col-md-2">
-                            <input class="form-control" type="text" placeholder="Código" id="cod_art" name="cod_art">    
+                            <input class="form-control" type="text" placeholder="Código" id="cod_art" name="cod_art" onchange="validarSiNumero(this);">    
                         </div>
 						<div class="col-md-3">
 							<button type="submit" style="border: none;"><img src='../assets/img/searchs.png' style='width:40px;height:40px;border:0' title='Buscar'></img></button>
@@ -64,10 +64,8 @@ include("../head.php");
             </div>
         </div>
     </div>
-   
     
-        <!-- <button type="button" class="btn btn-info agregar float-right"><a href="agregarArticuloPrecio.php" style="color:white!important">AGREGAR</a></button>  -->
-        <button class="btn btn-info agregar float-right"><a href="javascript:getPDF();" style="color:white!important">DESCARGAR</a></button> 
+        <button class="btn btn-info agregar float-right" style="margin-bottom: 15px;"><a href="javascript:getPDF();" style="color:white!important">DESCARGAR</a></button> 
         
         <br>
         <div class="table-wrapper-scroll-y my-custom-scrollbar" id="aImprimir" class="aImprimir">    
@@ -108,12 +106,7 @@ include("../head.php");
 </body>
 <script>
 
-function addPorcent(){
-  
-        document.getElementById("porcentajeMaterial").value+="%";
-    
-   
-}
+
     function crearPdf() {
         
         var pdf = new jsPDF('p', 'pt', 'A4');

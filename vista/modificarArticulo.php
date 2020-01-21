@@ -27,12 +27,12 @@ include_once("../head.php");
                                 <label class='' id='codigo'>Codigo</label>
                         </div>
                         <div class= col-md-1>
-                                <input class='form-control' type='text' name='codigo' value='".$articulo_cod."' readOnly>
+                                <input class='form-control' type='text' name='codigo' value='".$articulo_cod."'  readOnly>
                         </div>
-                        <div class= col-md-1>
+                        <div class= col-md-2>
                                 <label class='' id='descripcion'>Descripcion</label>
                         </div>
-                        <div class= col-md-9>
+                        <div class= col-md-8>
                                 <input class='form-control' type='text' name='descripcion' value='".$articulo_descr."' readOnly>
                         </div>
                 </div>
@@ -42,31 +42,31 @@ include_once("../head.php");
                                 <label class='' id='eje'>Eje</label>
                         </div>
                         <div col-md-1>
-                                <input class='form-control' type='text' name='eje' value='".$articulo_eje."'>
+                                <input class='form-control' type='text' name='eje' value='".$articulo_eje."' onchange='validarSiNumero(this);'>
                         </div>
                         <div col-md-1>
                                 <label class='' id='aloj'>Aloj</label>
                         </div>
                         <div col-md-1>
-                                <input class='form-control' type='text' name='aloj' value='".$articulo_aloj."'>
+                                <input class='form-control' type='text' name='aloj' value='".$articulo_aloj."' onchange='validarSiNumero(this);'>
                         </div>         
                         <div col-md-1>
                                 <label class='' id='esp'>Esp</label>
                         </div>
                         <div col-md-1>
-                                <input class='form-control' type='text' name='esp' value='".$articulo_esp."'>
+                                <input class='form-control' type='text' name='esp' value='".$articulo_esp."' onchange='validarSiNumero(this);'>
                         </div>     
                         <div col-md-1>
                                 <label class='' id='form'>Form</label>
                         </div>
                         <div col-md-1>
-                                <input class='form-control' type='text' name='form' value='".$articulo_form."'>
+                                <input class='form-control' type='text' name='form' value='".$articulo_form."'onchange='validarSiNumero(this);'>
                         </div>                      
                         <div col-md-1>
                                 <label class='' id='giro'>Giro</label>
                         </div>
                         <div col-md-1>
-                                <input class='form-control' type='text' name='giro' value='".$articulo_giro."'>
+                                <input class='form-control' type='text' name='giro' value='".$articulo_giro."' onchange='validarSiNumero(this);'>
                         </div>  
                 <br>
                 <div class='row'>
@@ -74,27 +74,27 @@ include_once("../head.php");
                                 <label class='' id='G'>G($):</label>
                         </div>
                         <div class= col-md-1>
-                                <input class='form-control' type='text' name='G' value='".$articulo_g."'>
+                                <input class='form-control' type='text' name='G' value='".$articulo_g."' onchange='validarSiNumero(this);'>
                         </div>
                         <div class= col-md-1>
                                 <label class='' id='S'>S($):</label>
                         </div>
                         <div class= col-md-1>
-                                <input class='form-control' type='text' name='S' value='".$articulo_s."'>
+                                <input class='form-control' type='text' name='S' value='".$articulo_s."' onchange='validarSiNumero(this);'>
                         </div>
                 
                         <div class= col-md-1>
                                 <label class='' id='B'>B($):</label>
                         </div>
                         <div class= col-md-1>
-                                <input class='form-control' type='text' name='B' value='".$articulo_b."'>
+                                <input class='form-control' type='text' name='B' value='".$articulo_b."' onchange='validarSiNumero(this);'>
                         </div>
                 
                         <div class= col-md-1>
                                 <label class='' id='V'>V($):</label>
                         </div>
                         <div class= col-md-1>
-                                <input class='form-control' type='text' name='V' value='".$articulo_v."'>
+                                <input class='form-control' type='text' name='V' value='".$articulo_v."' onchange='validarSiNumero(this);'>
                         </div>
                 </div>
                 <div class='col-md-12'>

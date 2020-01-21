@@ -34,9 +34,18 @@ include("../head.php");
                 </table>
 
     </div>
-    <button class="btn btn-info float-right agregar" type="submit">AGREGAR</button>
-	<button class="btn btn-danger float-right agregar"><a href="../home.php" style="color:white!important">CANCELAR</a></button>
+    <button class="btn btn-info float-right agregar" type="submit"  style="margin-top: 24px;">AGREGAR</button>
+	
     </form>
+    <button class="btn btn-danger float-right agregar"><a onclick="confirmarCancelacion();" style="color:white!important">CANCELAR</a></button>
 </div>
 </body>
+<script>
+        function confirmarCancelacion(){
+                var ask = confirm("¿Seguro quiere cancelar?");
+                if (ask) {
+                window.location.href="../vista/clientes.php";
+                }
+        }
+</script>
 </html>

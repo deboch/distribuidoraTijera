@@ -83,7 +83,7 @@ function deleteArticulo($nro_art){
     $delete = "DELETE FROM articulo WHERE codigo='$nro_art'";
     $result = mysqli_query($conn,$delete);
     if($result){
-        echo "<script>alert('El cliente fué eliminado con éxito.'); window.location.href='../vista/articulos.php?';</script>";
+        echo "<script>alert('El artículo fué eliminado con éxito.'); window.location.href='../vista/articulos.php?';</script>";
     }
     mysqli_close($conn); 
     
