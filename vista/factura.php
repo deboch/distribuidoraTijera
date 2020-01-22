@@ -18,7 +18,7 @@ error_reporting(0);
 		<br><br>
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Agregar articulos a factura<h2>
+				<h2>Agregar art&iacuteculos a factura<h2>
 			</div>
 		</div>
 		<div class="row">
@@ -97,10 +97,10 @@ error_reporting(0);
 				<table class="table table-striped" id="mitabla">
 				<thead>
 					<tr>
-					<th scope="col">Articulo</th>
+					<th scope="col">Art&iacuteculo</th>
 					<th scope="col">Tipo</th>
 					<th scope="col">Cantidad</th>
-					<th scope="col">Descripción</th>
+					<th scope="col">Descripci&oacuten</th>
 					<th scope="col">Precio Unit.</th>
 					<th scope="col">Total</th>
 					<th scope="col"></th>

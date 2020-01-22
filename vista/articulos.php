@@ -31,7 +31,7 @@ include("../head.php");
                 <form method="get" action="../controlador/controlador_articulos.php">
                     <div class="row">
 						<div class="col-md-2">
-                            <input class="form-control" type="text" placeholder="Articulo" id="cod_art" name="cod_art" onchange="validarSiNumero(this);">    
+                            <input class="form-control" type="text" placeholder="Artículo" id="cod_art" name="cod_art" onchange="validarSiNumero(this);">    
                         </div>
 						<div class="col-md-3">
                         <button class="btn btn-info" type="submit">BUSCAR</button>
@@ -55,7 +55,7 @@ include("../head.php");
             <table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                 <tr>
-                    <th>Articulo</th>
+                    <th>Art&iacuteculo</th>
                     <th>Descripcion</th>
                     <th>Eje</th>
                     <th>Aloj.</th>

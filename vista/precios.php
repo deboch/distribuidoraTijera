@@ -72,8 +72,8 @@ include("../head.php");
                 <table class="table table-bordered table-striped mb-0" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                     <tr>
-                        <th>Articulo</th>
-                        <th>Descripcion</th>
+                        <th>Art&iacuteculo</th>
+                        <th>Descripci&oacuten</th>
                         <th>G($)</th>
                         <th>S($)</th>
                         <th>B($)</th>
