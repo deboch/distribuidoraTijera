@@ -63,3 +63,4 @@ function validarPorcentaje(campo){
 function addPorcent(){
   document.getElementById("porcentajeMaterial").value+="%";
 }
+/////////////////////////

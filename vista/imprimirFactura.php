@@ -228,16 +228,29 @@ include_once("../head.php");
 					</div>
 					
 				<br><br><br><br><br><br>
-				
-                 <button class="btn btn-info float-right agregar"><a href="javascript:getPDF()" style="color:white!important">DESCARGAR</a></button>
+				<input class="btn btn-info float-right agregar pdf" type="button" name="imprimir" value="Imprimir" onclick="imprimir();">
+                 <!-- <button class="btn btn-info float-right agregar"><a href="javascript:getPDF()" style="color:white!important">DESCARGAR</a></button> -->
 				<!-- <input type="hidden" name="hidden_html" id="hidden_html" /> -->
 				<!-- <input type="submit" class="btn btn-primary" id="crearPdf" value="Descargar Pdf"/> -->
             
 				
     </div>
-	<button class="btn btn-danger float-right agregar"><a onclick='confirmarCancelacion()' style="color:white!important">Cancelar</a></button>            
+	<button class="btn btn-danger float-right agregar pdf"><a onclick='confirmarCancelacion()' style="color:white!important">Cancelar</a></button>            
         </body>
 <script>
+function imprimir(){
+        var iconos = document.getElementsByClassName("pdf");
+        longitud = iconos.length;
+
+        for (i=0;i<longitud;i++){
+            iconos[i].style.display="none";
+        }
+        window.print();
+
+}
+
+
+
 $(document).ready(function(){
 
 $('#crearPdf').click(function(){
