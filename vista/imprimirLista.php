@@ -14,7 +14,7 @@ include("../head.php");
 		include("../header.php");
     ?>
 
-    <button class="btn btn-info agregar float-right pdf" style="margin-bottom: 15px;"><a href="javascript:imprimir();" style="color:white!important">DESCARGAR</a></button>
+    <button class="btn btn-info agregar float-right pdf" style="margin-bottom: 15px;"><a href="javascript:imprimir();" style="color:white!important">IMPRIMIR</a></button>
     <div class="table-wrapper-scroll-y my-custom-scrollbar" id="aImprimir" class="aImprimir">    
         <table class="table table-bordered table-striped mb-0 display" id="example" width="100%" cellspacing="0">
             <thead>

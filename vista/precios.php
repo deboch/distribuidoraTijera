@@ -41,7 +41,7 @@ include("../head.php");
                             </select>
                         </div>
                         <div class="col-md-2 pdf">
-                            <button  type="submit" class="btn btn-info agregar float-right pdf">MODIFICAR</button>  
+                            <button  type="submit" class="btn btn-info agregar float-right pdf"  style="color:white!important">MODIFICAR</button>  
                         </div>
                     </div>
                 </form>
@@ -69,9 +69,7 @@ include("../head.php");
             </div>
         </div>
     </div> -->
-        <div class="col-md-2 pdf">
-            <button class="btn btn-info agregar float-right"><a href="imprimirLista.php">VER LISTA COMPLETA</a></button>  
-        </div>
+        
        
         <br>
         <br>
@@ -110,8 +108,11 @@ include("../head.php");
             
 	</div>
     <div class="col-md-12 text-center">
-<ul class="pagination pagination-lg pager" id="articulos_page"></ul>
-</div>
+        <ul class="pagination pagination-lg pager" id="articulos_page"></ul>
+    </div>
+    <div class="col-md-4 offset-8 pdf">
+        <button class="btn btn-info agregar float-right"><a href="imprimirLista.php"  style="color:white!important">VER LISTA COMPLETA</a></button>  
+    </div>
 </div>
 		
 </body>
