@@ -1,8 +1,12 @@
-
+@font-face {
+    font-family: Roboto;
+    src: url(‘Roboto-Medium.ttf’);
+}
 body {
     background: white;
     /*background: linear-gradient(to right, #0062E6, #33AEFF);*/
     font-size: x-large;
+    font-family: Roboto;
 }
 
 
@@ -26,7 +30,8 @@ body {
 
 .titulo{
 	text-align: center;
-	color: #256;
+    /* color: #256; */
+    color: black;
 }
 #factura{
 	color: red;

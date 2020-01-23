@@ -9,10 +9,13 @@
 include("../head.php");
 ?>
 <body>
+    
 <div class="container">
+    <br>
 		<?php
 			include("../header.php");
-		?>
+        ?>
+        <br><br><br>
     <h4 class="pdf" >Lista</h4>
     <div class="card shadow mb-4">
         <div class="card-body pdf">
@@ -45,7 +48,9 @@ include("../head.php");
             </div>
         </div>
     </div>
-    <div class="card shadow mb-4 pdf">
+    <label>Si desea resetear la lista a precio de costo haga click</label>
+   <a href="../controlador/limpiarLista.php" style="color:red!important">Aquí</a>
+    <!-- <div class="card shadow mb-4 pdf">
         <div class="card-body pdf">
             <div class="card-header py-3 pdf">
                 <form method="get" action="../controlador/controlador_precio.php">
@@ -63,13 +68,16 @@ include("../head.php");
                 </form>
             </div>
         </div>
-    </div>
-    
-        <button class="btn btn-info agregar float-right pdf" style="margin-bottom: 15px;"><a href="javascript:imprimir();" style="color:white!important">DESCARGAR</a></button> 
-        
+    </div> -->
+        <div class="col-md-2 pdf">
+            <button class="btn btn-info agregar float-right"><a href="imprimirLista.php">VER LISTA COMPLETA</a></button>  
+        </div>
+       
+        <br>
+        <br>
         <br>
         <div class="table-wrapper-scroll-y my-custom-scrollbar" id="aImprimir" class="aImprimir">    
-                <table class="table table-bordered table-striped mb-0" id="dataTable" width="100%" cellspacing="0">
+                <table class="table table-bordered table-striped mb-0 display" id="example" width="100%" cellspacing="0">
                     <thead>
                     <tr>
                         <th>Art&iacuteculo</th>
@@ -82,7 +90,7 @@ include("../head.php");
                        
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody >
                     <?php
                         foreach ($articulos as $articulo){
                             echo "<tr>
@@ -101,87 +109,44 @@ include("../head.php");
                 </table>
             
 	</div>
+    <div class="col-md-12 text-center">
+<ul class="pagination pagination-lg pager" id="articulos_page"></ul>
+</div>
 </div>
 		
 </body>
 <script>
 
-
-    function imprimir(){
-        var iconos = document.getElementsByClassName("pdf");
-        longitud = iconos.length;
-
-        for (i=0;i<longitud;i++){
-            iconos[i].style.display="none";
-        }
-        window.print();
-
-    }
-
-
-
-
-    function crearPdf() {
-        
-        var pdf = new jsPDF('p', 'pt', 'A4');
-        source = $('#aImprimir')[0];
-        specialElementHandlers = {
-            '#bypassme': function (element, renderer) {
-                return true
+$(document).ready(function() {
+    $('#example').DataTable( {
+        "order": [[ 2, "asc" ]],
+        "language": {
+                "decimal":        "",
+                "emptyTable":     "No contiene datos la tabla",
+                "info":           "Mostrando _START_ a _END_ de _TOTAL_ artículos",
+                "infoEmpty":      "Mostrar 0 to 0 of 0 artículos",
+                "infoFiltered":   "(filtrado de _MAX_ total artículos)",
+                "infoPostFix":    "",
+                "thousands":      ",",
+                "lengthMenu":     "Mostrar _MENU_ artículos",
+                "loadingRecords": "Cargando...",
+                "processing":     "Procesando...",
+                "search":         "Buscar:",
+                "zeroRecords":    "No se encontro resultado",
+                "paginate": {
+                    "first":      "Primero",
+                    "last":       "Anterior",
+                    "next":       "Siguiente",
+                    "previous":   "Último"
+                },
+                "aria": {
+                    "sortAscending":  ": activate to sort column ascending",
+                    "sortDescending": ": activate to sort column descending"
+                }
             }
-        };
-        margins = {
-            
-        };
-        pdf.fromHTML(
-            source,
-            margins.left, // x coord
-            margins.top, { // y coord
-                'width': margins.width,
-                'elementHandlers': specialElementHandlers
-            },
-            function (dispose) {
-                pdf.save('listaDePrecios.pdf');
-            }, margins
-        );
-    }
-    function getPDF(){
-        var campos= document.getElements.getByClassName("foto");
-        var cant = campos.length;
-        for (i=0;i<cant;i++){
-            campos[i].hidden=true;
-        }  
-        console.log("inicio");
-        var HTML_Width = $("#aImprimir").width();
-        var HTML_Height = $("#aImprimir").height();
-        var top_left_margin = 10;
-        var PDF_Width = HTML_Width+(top_left_margin*2);
-        var PDF_Height = (PDF_Width*1.5)+(top_left_margin*2);
-        var canvas_image_width = HTML_Width;
-        var canvas_image_height = HTML_Height;
-       
-        var totalPDFPages = Math.ceil(HTML_Height/PDF_Height)-1;
-         console.log(totalPDFPages);
-        
-        html2canvas($("#aImprimir")[0],{allowTaint:true}).then(function(canvas) {
-            canvas.getContext('2d');
-            
-            console.log(canvas.height+"  "+canvas.width);
-            
-            
-            var imgData = canvas.toDataURL("image/jpeg", 1.0);
-            var pdf = new jsPDF('p', 'pt',  [PDF_Width, PDF_Height]);
-                pdf.addImage(imgData, 'JPG', top_left_margin, top_left_margin,canvas_image_width,canvas_image_height);
-            
-            
-            for (var i = 1; i <= totalPDFPages; i++) { 
-            pdf.addPage(PDF_Width, PDF_Height);
-            pdf.addImage(imgData, 'JPG', top_left_margin, -(PDF_Height*i)+(top_left_margin*4),canvas_image_width,canvas_image_height);
-            }
-            console.log("salio del for");
-            pdf.save("ListaDePrecios.pdf");
-        });
-    };
+    } );
+} );
+
 </script>
 <footer></footer>
 </html>

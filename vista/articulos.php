@@ -6,7 +6,7 @@ include_once("../controlador/controlador_articulos.php");
 <!DOCTYPE html>
 <html>
 <?php
-include("../head.php");
+include_once("../head.php");
 ?>
 <body>
     <div class="container">

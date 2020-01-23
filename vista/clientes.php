@@ -31,11 +31,11 @@ include_once("../header.php");
             <table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                 <tr>
-                    <th>Numero</th>
+                    <th>N&uacutemero</th>
                     <th>Cliente</th>
-                    <th>Direccion</th>
+                    <th>Direcci&oacuten</th>
                     <th>Localidad</th>
-                    <th>Telefono</th>
+                    <th>Tel&eacutefono</th>
                     <th></th>
                     <th></th>
                 </tr>

@@ -128,3 +128,21 @@ function updatePrecio($tipo, $porcentaje){
     mysqli_close($conn);
     return $articulos;
 }
+
+function limpiarLista(){
+    $conn = getConexion();
+    $sql = "TRUNCATE table precio_venta";
+    $result = mysqli_query($conn, $sql);
+    cargarListaPrecio();
+    $articulos=getlistaPreciosVentas();
+    mysqli_close($conn);
+    return $articulos;
+}
+
+function cargarListaPrecio(){
+    $conn = getConexion();
+    $sql = "INSERT INTO precio_venta 
+    SELECT * FROM precio_base_costo";
+    $result = mysqli_query($conn, $sql);
+    mysqli_close($conn);
+}

@@ -8,15 +8,15 @@ include("../head.php");
 <body>
 <div class="container">
 <br>
-    <h2>AGREGAR ARTICULO</h2>
+    <h2>AGREGAR ART&IacuteCULO</h2>
     <br><br>
     <form method="POST" action="../controlador/controlador_agregar_articulo.php">
     <div class="table-responsive" id="tablaAgregar">
                 <table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>Articulo</th>
-                            <th>Descripcion</th>
+                            <th>Art&acuteculo</th>
+                            <th>Descripci&oacuten</th>
                             <th>Eje</th>
                             <th>Aloj</th>
                             <th>Esp.</th> 

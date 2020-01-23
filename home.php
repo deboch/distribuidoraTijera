@@ -14,14 +14,15 @@ require_once("conexion.php");
 	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body id="cuerpo" style="">
-
+<div class="container">
 <header>
-<br>
-	
+	<?php
+		include("header.php");
+	?>
 </header>
 
     <div class="container">
-	<h1 class="titulo">Bienvenido Distribuidora T</h1>
+	
 	<div class="row" style="margin-top: 50px; height:720px;">
 	<div class="col-md-4"></div>
 	<div class="col-md-4">
@@ -35,6 +36,7 @@ require_once("conexion.php");
 	</div>
 
 </body>
+</div>
 <footer style="border-top: solid 2px black;">
 <p>-2020-</p>
 </footer>

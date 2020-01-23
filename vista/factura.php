@@ -128,7 +128,14 @@ error_reporting(0);
 				
 				</table>
 					<?php
-					 echo "<label class='' id='precio' >Total</label><input class='form-control' type='text' name='precio' value='".$total."' readOnly>";
+					 echo "<div class='row'>
+								<div class='col-md-1 offset-9'>	 
+									 <label class='' id='precio' >Total</label>
+								</div>
+								<div class='col-md-2'>
+									 <input class='form-control' type='text' name='precio' value='".$total."' readOnly>
+								</div>
+								</div>";
 						
 					?>	
 				<br><br><br><br><br><br>

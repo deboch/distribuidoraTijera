@@ -18,11 +18,11 @@ include_once("../head.php");
                         <table class='table table-striped' id='dataTable' width='100%' cellspacing='0'>
                         <thead>
                                 <tr>
-                                <th>Numero</th>
+                                <th>N&uacutemero</th>
                                 <th>Cliente</th>
-                                <th>Direccion</th>
+                                <th>Direcci&oacuten</th>
                                 <th>Localidad</th>
-                                <th>Telefono</th> 
+                                <th>Tel&eacutefono</th> 
                                 </tr>
                         </thead>
                         <tbody>
