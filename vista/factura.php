@@ -18,7 +18,7 @@ error_reporting(0);
 		<br><br>
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Agregar art&iacuteculos a factura<h2>
+				<h3>Agregar art&iacuteculos a factura<h3>
 			</div>
 		</div>
 		<div class="row">

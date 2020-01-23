@@ -10,7 +10,7 @@ include("../head.php");
     <?php
 include_once("../header.php");
 ?>
-		<h1>Calculador de Porcentaje</h1>
+		<h3>Calculador de Porcentaje</h3>
 	
 			
 			Ingresa precio actual:<br />

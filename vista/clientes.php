@@ -16,7 +16,7 @@ include_once("../header.php");
 		<br><br>
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Clientes<h2>
+				<h3>Clientes<h3>
 			</div>
 		</div>
 		<div class="row">

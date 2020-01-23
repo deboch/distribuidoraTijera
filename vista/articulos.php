@@ -16,7 +16,7 @@ include_once("../head.php");
 		<br><br>
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Lista de art&iacuteculos<h2>
+				<h3>Lista de art&iacuteculos<h3>
 			</div>
 		</div>
 		<div class="row">

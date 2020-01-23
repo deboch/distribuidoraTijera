@@ -16,7 +16,7 @@ include("../head.php");
 			include("../header.php");
         ?>
         <br><br><br>
-    <h4 class="pdf" >Lista</h4>
+    <h3 class="pdf" >Lista</h3>
     <div class="card shadow mb-4">
         <div class="card-body pdf">
             <div class="card-header py-3 pdf">
