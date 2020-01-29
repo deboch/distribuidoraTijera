@@ -2,7 +2,7 @@
 <div class="container" >
 	<div class="row" >
 		<div class="col-md-1">
-			<a class="btn inicio pdf" href="../index.php"><img src="../assets/img/home3.png" style="width:50px;height:50px;border:0"></img></a>
+			<a class="btn inicio pdf" href="../index.php"><img src="../assets/img/icono2.png" style="width:50px;height:50px;border:0"></img></a>
 		</div>
 		<div class="col-md-11">
 			<h1 class="titulo" id="titulo" style="color: white;">Distribuidora Tijera</h1>

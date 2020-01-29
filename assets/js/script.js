@@ -64,3 +64,25 @@ function addPorcent(){
   document.getElementById("porcentajeMaterial").value+="%";
 }
 /////////////////////////
+$(document).ready(function(){
+  console.log('jQuery esta trabajando');
+  $('#search').keyup(function(e){
+      if($('#search').val()){
+          let search = $('#search').val();
+          $.ajax({
+          url: '../controlador/controlador_articulos.php',
+          type: 'POST',
+          data: {search},
+          success: function(response){
+              let tasks = JSON.parse(response);   
+              let template = ''; 
+              tasks.forEach(task => {
+                  template += '<li>${task.codigo}</li>';
+                  // console.log(task);
+              });
+              $('#containers').html(template)
+          }
+          })
+      }
+  })
+});

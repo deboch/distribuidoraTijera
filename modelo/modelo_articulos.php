@@ -2,7 +2,7 @@
 require("../conexion.php");
 function getlistaArticulos(){
 	$conn = getConexion();
-    $sql = "SELECT a.codigo, a.descripcion, a.eje, a.aloj, a.esp, a.form, a.giro, pc.G, pc.S,pc.B,pc.V FROM articulo a ,precio_costo pc WHERE a.codigo=pc.codigo";
+    $sql = "SELECT a.codigo, a.descripcion, a.eje, a.aloj, a.esp, a.form, a.giro, pc.G, pc.S,pc.B,pc.V FROM articulo a ,precio_venta pc WHERE a.codigo=pc.codigo";
     $result = mysqli_query($conn, $sql);
 
     $articulos = Array();
@@ -34,37 +34,53 @@ function getlistaArticulos(){
     return $articulos;
 }
 
-function getArticulo($codigo){
+function getArticulo($search){
 	$con = getConexion();
-    $sql = "SELECT a.codigo, a.descripcion, a.eje, a.aloj, a.esp, a.form, a.giro, pc.G, pc.S, pc.B, pc.V FROM articulo a, precio_costo pc WHERE a.codigo='$codigo' AND a.codigo=pc.codigo";
+    $sql = "SELECT a.codigo, a.descripcion, a.eje, a.aloj, a.esp, a.form, a.giro, pc.G, pc.S, pc.B, pc.V FROM articulo a, precio_venta pc WHERE a.codigo='$search' AND a.codigo=pc.codigo";
     $result = mysqli_query($con, $sql);
-
+    if(!result){
+        die('Query Error'. mysql_error($con));
+    }
     $articulos = Array();
-    if(mysqli_num_rows($result) > 0)
+    // if(mysqli_num_rows($result) > 0)
+    // {
+    while ($row = mysqli_fetch_array($result))
     {
-        while ($row=mysqli_fetch_assoc($result))
-        {
-            $articulo= Array();
-            $articulo['codigo'] = $row["codigo"];
-			$articulo['descripcion'] = $row["descripcion"];
-            $articulo['eje'] = $row["eje"];
-            $articulo['aloj'] = $row["aloj"];
-            $articulo['esp'] = $row["esp"];
-            $articulo['form'] = $row["form"];
-            $articulo['giro'] = $row["giro"];
-            $articulo['G'] = $row["G"];
-            $articulo['S'] = $row["S"];
-            $articulo['B'] = $row["B"];
-            $articulo['V'] = $row["V"];
-            $articulos[] = $articulo;
-        }
+        $articulos[] = array(
+            'codigo' => $row['codigo'],
+            'descripcion' => $row['descripcion'],
+            'eje' => $row['eje'],
+            'aloj' => $row['aloj'],
+            'esp' => $row['esp'],
+            'form' => $row['form'],
+            'giro' => $row['giro'],
+            'G'=> $row['G'],
+            'S' => $row['S'],
+            'B' => $row['B'],
+            'V' => $row['V']
+        );
+        // $articulo= Array();
+        // $articulo['codigo'] = $row["codigo"];
+		// $articulo['descripcion'] = $row["descripcion"];
+        // $articulo['eje'] = $row["eje"];
+        // $articulo['aloj'] = $row["aloj"];
+        // $articulo['esp'] = $row["esp"];
+        // $articulo['form'] = $row["form"];
+        // $articulo['giro'] = $row["giro"];
+        // $articulo['G'] = $row["G"];
+        // $articulo['S'] = $row["S"];
+        // $articulo['B'] = $row["B"];
+        // $articulo['V'] = $row["V"];
+        // $articulos[] = $articulo;
     }
-    else{
-        echo "No se encontro coincidencias";
-    }
-
-    mysqli_close($con);
-    return $articulos;
+    // }
+    // else{
+    //     // echo "No se encontro coincidencias";
+        
+    // }
+    $articulosString= json_encode($articulos);
+    echo $articulosString;
+    
 }
 
 function updateArticulo($cod ,$descr,$eje,$aloj,$esp,$form,$giro,$G,$S,$B,$V){
