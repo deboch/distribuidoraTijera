@@ -26,29 +26,33 @@ include_once("../head.php");
 		</div>	
 		<br><br>
         <div class="card shadow mb-4">
-        <div class="card-body">
-            <div class="card-header py-3">
-                <form method="get" action="../controlador/controlador_articulos.php">
-                    <div class="row">
-						<div class="col-md-2">
-                            <input class="form-control" type="text" placeholder="Artículo" id="cod_art" name="cod_art" onchange="validarSiNumero(this);">    
+            <div class="card-body">
+                <div class="card-header py-3">
+                    <form method="POST"> 
+                        <div class="form-group">
+                            <div class="col-md-2">
+                                <input class="form-control" type="text" placeholder="Artículo" id="search" name="search" onchange="validarSiNumero(this);">    
+                            </div>
+                            <div class="col-md-3">
+                                <button class="btn btn-info " type="submit" onclick="sendRequest();">BUSCAR</button>
+                            </div>
+                            </div>   
                         </div>
-						<div class="col-md-3">
-                        <button class="btn btn-info" type="submit">BUSCAR</button>
-						</div>
-                    </div>
                         
-                    </div>
-                    
-                </form>
+                    </form> 
+            </div>
         </div>
-    </div>
     <div class="row">
             <div class="col-md-11">
-                <button type="button" class="btn btn-info float-right agregar"><a href="agregarArticulo.php" style="color:white!important">AGREGAR</a></button>
+                <button type="button" class="btn btn-info float-right agregar"><a href="../vista/agregarArticulo.php" style="color:white!important">AGREGAR</a></button>
             </div>
         </div>    
    
+        <div class="card">
+            <div class="card-body">
+                <ul id="containers"></ul>
+            </div>
+        </div>
 
     <!-- <div class="table-responsive"> -->
 			
@@ -96,7 +100,22 @@ include_once("../head.php");
  </div>
  </div>
 </body>
+<script src="../assets/js/script.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous">
+</script>
+
 <script>
+    
+    function sendRequest(){
+       var theObject = new XMLHttpRequest();
+       theObject.open('GET', '../modelo/ajax.php', true);
+       theObject.setRequestHeader('Content-Type', 'application/x-ww-fomr-urlencoded');
+       theObject.onreadystatechange = function(){
+           console.log(theObject.responseText);
+       }
+       theObject.send();
+    }
     function confirmarCancelacion(num){
                 var ask = confirm("¿Seguro quieres eliminar el articulo?");
                 if (ask) {
