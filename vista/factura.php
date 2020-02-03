@@ -65,30 +65,31 @@ error_reporting(0);
 				<br>
 				<?php
                     foreach($articulos as $articulo){
-					echo" <div class='row'>
-						<div class='col-md-1'>
-						<label class='' id='codigo'>Artículo</label><input class='form-control' type='text' name='codigo' value='".$articulo['codigo']."'  >
-						</div>
-						<div class='col-md-1'>
-						<label class='' id='tipo'>Tipo</label><input class='form-control' type='text' name='tipo' value='".$articulo['tipo']."'  >
-						</div>
-						<div class='col-md-6'>
-						<label class='' id='descripcion'>Descripción</label><input class='form-control' name='descripcion' type='text' value='".$articulo['descripcion']."' >
-						</div>
-						<div class='col-md-1'>
-						<label class='' id='precio' >Precio</label><input class='form-control' type='text' name='precio' value='".$articulo['precio']."' >	
-						</div>
-						<div class='col-md-1'>
-						<label class='' id='cantidad' >Cantidad</label><input class='form-control' type='text' name='cantidad' value='1' >	
-						</div>
-						<div class='col-md-2'>
+					echo" <div class='card shadow'>
+					<div class='card-body row'>
+							<div class='col-md-1'>
+								<label class='' id='codigo'>Artículo</label><input class='form-control' type='text' name='codigo' value='".$articulo['codigo']."'  >
+							</div>
+							<div class='col-md-1'>
+								<label class='' id='tipo'>Tipo</label><input class='form-control' type='text' name='tipo' value='".$articulo['tipo']."'  >
+							</div>
+							<div class='col-md-6'>
+								<label class='' id='descripcion'>Descripción</label><input class='form-control' name='descripcion' type='text' value='".$articulo['descripcion']."' >
+							</div>
+							<div class='col-md-1'>
+								<label class='' id='precio' >Precio</label><input class='form-control' type='text' name='precio' value='".$articulo['precio']."' >	
+							</div>
+							<div class='col-md-1'>
+								<label class='' id='cantidad' >Cantidad</label><input class='form-control' type='text' name='cantidad' value='1' >	
+							</div>
+							<div class='col-md-2'>
 							<br>
-							<button type='submit' class='btn btn-info' style='margin-top: 8px'>AGREGAR</button>
-						</div>
-					</div>";
-					}
+							<button type='submit' class='btn btn-info' style='margin-top: 8px'>+</button>
+							</div>
+					</div></div>";
+					}?>
 
-					?>
+					
 			</div>
 		</form>
 		
@@ -138,11 +139,11 @@ error_reporting(0);
 								</div>";
 						
 					?>	
-				<br><br><br><br><br><br>
+				<br><br><br>
 				<div>
 				
-					<button class="btn btn-info float-right agregar" type="submit"><a href="../vista/imprimirFactura.php" style="color:white!important">SIGUIENTE</a></button>
-					<button class="btn btn-danger float-right agregar" type="submit"><a href="../home.php" style="color:white!important">CANCELAR</a></button>
+					<button class="btn btn-info float-right agregar" type="submit"><a href="../vista/imprimirFactura.php" style="color:white!important">-></a></button>
+					<button class="btn btn-danger float-right agregar" type="submit"><a href="../home.php" style="color:white!important" tittle="cancelar">x</a></button>
 				</div>
 		
 	</div>

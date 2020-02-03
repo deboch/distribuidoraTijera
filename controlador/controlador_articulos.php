@@ -32,7 +32,7 @@ if(!empty($search)){
         );  
     }
     $articulosString = json_encode($articulos);
-    echo ($articulosString) ;
+   
 }
 // if(isset($_GET["cod_art"])){
 //     $codigo=$_GET['cod_art'];

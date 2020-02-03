@@ -24,9 +24,9 @@ include("../head.php");
                     </thead>
                     <tbody>
                         <tr>
-                            <td><input class="form-control" type='text' name='numero'></td>                             
-                            <td><input class="form-control" type='text' name='nombre'></td>
-                            <td><input class="form-control" type='text' name='direccion'></td>
+                            <td><input class="form-control" type='text' name='numero'  required></td>                             
+                            <td><input class="form-control" type='text' name='nombre'  required></td>
+                            <td><input class="form-control" type='text' name='direccion'  required></td>
                             <td><input class="form-control" type='text' name='localidad'></td>
                             <td><input class="form-control" type='text' name='telefono'></td>  
                         </tr>
