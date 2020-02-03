@@ -29,12 +29,13 @@ include_once("../head.php");
             <div class="card-body">
                 <div class="card-header py-3">
                     <form method="POST"> 
-                        <div class="form-group">
+                        <div class="form-group row">
                             <div class="col-md-2">
                                 <input class="form-control" type="text" placeholder="Artículo" id="search" name="search" onchange="validarSiNumero(this);">    
                             </div>
                             <div class="col-md-3">
-                                <button class="btn btn-info " type="submit" onclick="sendRequest();">BUSCAR</button>
+                                <button type="submit" style="border: none;"><img src='../assets/img/searchs.png' style='width:40px;height:40px;border:0' title='Buscar'></img></button>
+                                <!-- <button class="btn btn-info " type="submit" onclick="sendRequest();">BUSCAR</button> -->
                             </div>
                             </div>   
                         </div>
@@ -44,15 +45,11 @@ include_once("../head.php");
         </div>
     <div class="row">
             <div class="col-md-11">
-                <button type="button" class="btn btn-info float-right agregar"><a href="../vista/agregarArticulo.php" style="color:white!important">AGREGAR</a></button>
+                <button type="button" class="btn btn-info float-right agregar mb-4"><a href="../vista/agregarArticulo.php" style="color:white!important">AGREGAR</a></button>
             </div>
         </div>    
    
-        <div class="card">
-            <div class="card-body">
-                <ul id="containers"></ul>
-            </div>
-        </div>
+       
 
     <!-- <div class="table-responsive"> -->
 			
@@ -70,6 +67,8 @@ include_once("../head.php");
                     <th>S($)</th>
                     <th>B($)</th>
                     <th>V($)</th>
+                    <th></th>
+                    <th></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -100,13 +99,36 @@ include_once("../head.php");
  </div>
  </div>
 </body>
-<script src="../assets/js/script.js"></script>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous">
-</script>
+
+
 
 <script>
-    
+  $(document).ready(function(){
+  console.log('jQuery esta trabajando');
+  $('#search').keyup(function(e){
+      if($('#search').val()){
+          let search = $('#search').val();
+          console.log('adentro del if');
+          $.ajax({
+          url: '../controlador/controlador_articulos.php',
+          type: 'POST',
+          data: {search},
+          success: function(response){
+            console.log(response);
+              let tasks = JSON.parse(response); 
+              let template = ''; 
+              tasks.forEach(task => {
+                  template += `<li>
+                  ${task.descripcion}
+                  </li>`
+                  
+              });
+              $('#containers').html(template);
+          }
+          })
+      }
+  })
+});  
     function sendRequest(){
        var theObject = new XMLHttpRequest();
        theObject.open('GET', '../modelo/ajax.php', true);

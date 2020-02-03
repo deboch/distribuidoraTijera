@@ -30,17 +30,17 @@ include("../head.php");
                     </thead>
                     <tbody>
                         <tr>
-                            <td><input class="form-control" type='text' name='articulo'></td>                             
-                            <td><input class="form-control" type='text' name='descripcion'></td>
+                            <td><input class="form-control" type='text' name='articulo' required></td>                             
+                            <td><input class="form-control" type='text' name='descripcion'  required></td>
                             <td><input class="form-control" type='text' name='eje'></td>
                             <td><input class="form-control" type='text' name='aloj'></td>
                             <td><input class="form-control" type='text' name='esp'></td>  
                             <td><input class="form-control" type='text' name='form'></td>                             
                             <td><input class="form-control" type='text' name='giro'></td>
-                            <td><input class="form-control" type='text' name='G'></td>
-                            <td><input class="form-control" type='text' name='S'></td>
-                            <td><input class="form-control" type='text' name='B'></td>  
-                            <td><input class="form-control" type='text' name='V'></td>  
+                            <td><input class="form-control" type='text' name='G' required></td>
+                            <td><input class="form-control" type='text' name='S' required></td>
+                            <td><input class="form-control" type='text' name='B' required></td>  
+                            <td><input class="form-control" type='text' name='V' required></td>  
                         </tr>
                     </tbody>
                 </table>

@@ -1,6 +1,7 @@
 <?php
     include("../modelo/modelo_articulos.php");
-   
+   if(isset($_GET['articulo'])){
+
     $articulo=$_POST['articulo'];
     $descripcion=$_POST['descripcion'];
     $eje=$_POST['eje'];
@@ -14,3 +15,5 @@
     $V=$_POST['V'];
     
     $articulos=addArticulo($articulo,$descripcion,$eje,$aloj,$esp,$form,$giro,$G,$S,$B,$V);
+
+}
