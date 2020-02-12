@@ -1,34 +1,34 @@
 <?php
 require("../conexion.php");
-function getlistaPrecios(){
-    $conn = getConexion();
-    $sql = "SELECT a.codigo, a.descripcion, pv.G, pv.S, pv.B, pv.V FROM articulo a JOIN precio_venta pv ON a.codigo=pc.codigo";
-    $result = mysqli_query($conn, $sql);
+// function getlistaPrecios(){
+//     $conn = getConexion();
+//     $sql = "SELECT a.codigo, a.descripcion, pv.G, pv.S, pv.B, pv.V FROM articulo a JOIN precio_venta pv ON a.codigo=pc.codigo";
+//     $result = mysqli_query($conn, $sql);
     
-    $articulos = Array();
+//     $articulos = Array();
 
-    if(mysqli_num_rows($result)> 0)
-    {
-        while ($row=mysqli_fetch_assoc($result))
-        {
-            $articulo= Array();
-            $articulo['codigo'] = $row["codigo"];
-            $articulo['descripcion'] = $row["descripcion"];
-            $articulo['G'] = $row["G"];
-            $articulo['S'] = $row["S"];
-            $articulo['B'] = $row["B"];
-            $articulo['V'] = $row["V"];
-            $articulos[] = $articulo;
-        }
-    }
-    else{
-        echo "No se encontro coincidencias";
-    }
+//     if(mysqli_num_rows($result)> 0)
+//     {
+//         while ($row=mysqli_fetch_assoc($result))
+//         {
+//             $articulo= Array();
+//             $articulo['codigo'] = $row["codigo"];
+//             $articulo['descripcion'] = $row["descripcion"];
+//             $articulo['G'] = $row["G"];
+//             $articulo['S'] = $row["S"];
+//             $articulo['B'] = $row["B"];
+//             $articulo['V'] = $row["V"];
+//             $articulos[] = $articulo;
+//         }
+//     }
+//     else{
+//         echo "No se encontro coincidencias";
+//     }
 
-    mysqli_close($conn);
-    return $articulos;
+//     mysqli_close($conn);
+//     return $articulos;
 
-}
+// }
 function getlistaPreciosVentas(){
     $conn = getConexion();
     $sql = "SELECT a.codigo, a.descripcion, pv.G, pv.S, pv.B, pv.V FROM articulo a JOIN precio_venta pv ON a.codigo=pv.codigo";

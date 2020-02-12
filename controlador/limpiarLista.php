@@ -1,5 +1,5 @@
 <?php
-include("../modelo/modelo_precio.php");
+include_once("../modelo/modelo_precio.php");
 
 limpiarLista();
 
