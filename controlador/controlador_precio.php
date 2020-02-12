@@ -1,5 +1,5 @@
 <?php
-include("../modelo/modelo_precio.php");
+include_once("../modelo/modelo_precio.php");
 $articulos = getListaPreciosVentas();
 if(isset($_GET["cod_art"])){
     $codigo = $_GET['cod_art'];
