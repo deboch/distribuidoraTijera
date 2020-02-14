@@ -136,8 +136,15 @@ error_reporting(0);
 					?>	
 				<br><br><br>
 				<div>
-				<a href="../vista/imprimirFactura.php" class="btn btn-primary  btn-raised btn-fab btn-round float-right" tittle="Siguiente"><i class="material-icons">forward</i></a>
-				<a href="../home.php" class="btn btn-danger btn-raised btn-fab btn-round float-right" tittle="cancelar"><i class="material-icons">clear</i></a>	
+				<a  href="../vista/imprimirFactura.php" class="btn btn-primary btn-round float-right pdf" type="button">
+					<i class="material-icons">forward</i> Siguiente
+				</a>
+				<a href="../home.php"  class="btn btn-danger btn-round float-right pdf" type="button">
+                <i class="material-icons">clear</i> Cancelar
+				</a>
+				
+				<!-- <a href="../vista/imprimirFactura.php" class="btn btn-primary  btn-raised btn-fab btn-round float-right" tittle="Siguiente"><i class="material-icons">forward</i></a>
+				<a href="../home.php" class="btn btn-danger btn-raised btn-fab btn-round float-right" tittle="cancelar"><i class="material-icons">clear</i></a>	 -->
 				</div>
 		
 	</div>

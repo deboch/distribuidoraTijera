@@ -10916,7 +10916,7 @@ fieldset[disabled][disabled] .btn-group-raised .btn,
 }
 
 body {
-  background-color: #eee;
+  /* background-color: #eee; */
   color: #3C4858;
   font-weight: 300;
 }
@@ -17345,6 +17345,7 @@ footer .pull-center {
 
 .section {
   padding: 70px 0;
+  background-color: #ffffff;
 }
 
 .profile-page .page-header {

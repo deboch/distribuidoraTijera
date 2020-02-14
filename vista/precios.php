@@ -19,7 +19,7 @@ include("../head.php");
     <h3 class="pdf" >Lista</h3>
     <div class="card shadow mb-4">
         <div class="card-body pdf">
-            <div class="card-header py-3 pdf">
+            <div class="">
                 <form method="POST" action="../controlador/controlador_precio.php">
                     <div class="row pdf" style="border: solid 0.3px #dcdddc; padding: 20px;">
                     <div class="col-md-5 pdf">
@@ -41,7 +41,8 @@ include("../head.php");
                             </select>
                         </div>
                         <div class="col-md-2 pdf">
-                            <button  type="submit" class="btn btn-info agregar float-right pdf"  style="color:white!important">MODIFICAR</button>  
+                                                    
+                            <button type="submit" class="btn btn-primary btn-raised btn-fab btn-round pdf"><i class='material-icons'>done</i></button>  
                         </div>
                     </div>
                 </form>
@@ -50,26 +51,7 @@ include("../head.php");
     </div>
     <label>Si desea resetear la lista a precio de costo haga click</label>
    <a href="../controlador/limpiarLista.php" style="color:red!important">Aquí</a>
-    <!-- <div class="card shadow mb-4 pdf">
-        <div class="card-body pdf">
-            <div class="card-header py-3 pdf">
-                <form method="get" action="../controlador/controlador_precio.php">
-                    <div class="row pdf" style="border: solid 0.3px #dcdddc; padding: 20px;">
-                        <div class="col-md-2 pdf">
-                            <h5>Buscar:</h5>
-                        </div>
-						<div class="col-md-2 pdf">
-                            <input class="form-control" type="text" placeholder="Código" id="cod_art" name="cod_art" onchange="validarSiNumero(this);">    
-                        </div>
-						<div class="col-md-3 pdf">
-							<button type="submit" style="border: none;"><img src='../assets/img/searchs.png' style='width:40px;height:40px;border:0' title='Buscar'></img></button>
-						</div>
-                    </div>                 
-                </form>
-            </div>
-        </div>
-    </div> -->
-        
+
        
         <br>
         <br>
@@ -98,7 +80,7 @@ include("../head.php");
                                 <td>".$articulo['S']."</td>
                                 <td>".$articulo['B']."</td>
                                 <td>".$articulo['V']."</td>
-                                <td class='pdf'><a href='../vista/modificarPrecioArticulo.php?codigo=".$articulo['codigo']."&descripcion=".$articulo['descripcion']."&G=".$articulo['G']."&S=".$articulo['S']."&B=".$articulo['B']."&V=".$articulo['V']."'><img class='pdf' src='../assets/img/modify.png' style='width:42px;height:42px;border:0' title='Modificar' id='modificar'></img></a></td>
+                                <td class='pdf'><a href='../vista/modificarPrecioArticulo.php?codigo=".$articulo['codigo']."&descripcion=".$articulo['descripcion']."&G=".$articulo['G']."&S=".$articulo['S']."&B=".$articulo['B']."&V=".$articulo['V']."'><i class='material-icons'>edit</i></a></td>
                                                         
                             </tr>";
                         }
@@ -111,7 +93,7 @@ include("../head.php");
         <ul class="pagination pagination-lg pager" id="articulos_page"></ul>
     </div>
     <div class="col-md-4 offset-8 pdf">
-        <button class="btn btn-info agregar float-right"><a href="imprimirLista.php"  style="color:white!important">VER LISTA COMPLETA</a></button>  
+        <button class="btn btn-primary agregar float-right"><a href="imprimirLista.php"  style="color:white!important">VER LISTA COMPLETA</a></button>  
     </div>
 </div>
 		

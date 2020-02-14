@@ -25,8 +25,13 @@ include_once("../header.php");
 			</div>
 		</div>	
 		<br><br>
-    <button type="button" class="btn btn-info float-right agregar"><a href="agregarCliente.php" style="color:white!important">AGREGAR</a></button> 
- 
+        <div class="row">
+            <div class="col-md-11">    
+                <a href="agregarCliente.php" class="btn btn-primary btn-round float-right">
+                    <i class="material-icons">add</i> Agregar
+                </a>
+            </div>
+        </div>  
     <div class="table-responsive">
             <table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
                 <thead>
@@ -50,8 +55,8 @@ include_once("../header.php");
                              <td>".$cliente['direccion']."</td>
                              <td>".$cliente['localidad']."</td>
                              <td>".$cliente['telefono']."</td>  
-                             <td><a href='#' onclick='confirmarCancelacion(".$num_cliente.")' ><img src='../assets/img/cleaner.png' style='width:42px;height:42px;border:0' title='Eliminar'></img></a></td>
-                             <td><a href='modificarCliente.php?numero=".$cliente['numero']."&nombre=".$cliente['nombre']."&direccion=".$cliente['direccion']."&localidad=".$cliente['localidad']."&telefono=".$cliente['telefono']."'><img src='../assets/img/modify.png' style='width:42px;height:42px;border:0' title='Modificar'></img></a></td>                           
+                             <td><a href='#' onclick='confirmarCancelacion(".$num_cliente.")' class='btn btn-primary btn-raised btn-fab btn-round'><i class='material-icons'>delete</i></a></td>
+                             <td><a href='modificarCliente.php?numero=".$cliente['numero']."&nombre=".$cliente['nombre']."&direccion=".$cliente['direccion']."&localidad=".$cliente['localidad']."&telefono=".$cliente['telefono']."' class='btn btn-primary btn-raised btn-fab btn-round' ><i class='material-icons'>edit</i></a></td>                   
                          </tr>";
                     }
                 ?>

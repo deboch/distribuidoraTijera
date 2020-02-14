@@ -10,16 +10,21 @@ include("../head.php");
     <?php
 include_once("../header.php");
 ?>
-		<h3>Calculador de Porcentaje</h3>
+		<h2>Calculador de Porcentaje</h2>
 	
+			<div>
+                <label class="form-control">Ingresa precio actual:<label />
+                <input class="form-control" type="text" id="valor1" name="valor1"><br />
+                </div>
+            <div>
+                <label class="form-control" >Ingresa precio a futuro:<label />
+                <input class="form-control" type="text"  id="valor2" name="valor2"><br>
+			</div>
+            <div>
+			<input class="form-control" type="button" value="Calcular" onclick="calcularPorcentaje()">
 			
-			Ingresa precio actual:<br />
-			<input class="" type="text" id="valor1" name="valor1"><br />
-			Ingresa precio a futuro:<br />
-			<input class="" type="text"  id="valor2" name="valor2"><br>
-			
-			<input class="" type="button" value="Calcular" onclick="calcularPorcentaje()">
-            Aument&oacute el <input type="text" id="porcentaje" name="porcentaje" value="">%
+            <label >Aument&oacute el </label><input type="text" id="porcentaje" name="porcentaje" value="">%
+            </div>
 
         </body>
         <script>

@@ -26,6 +26,10 @@
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
   <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css"> 
+  <script src="../assets/js/core/popper.min.js" type="text/javascript"></script>
   <script src="../assets/DataTables/DataTables-1.10.20/css/jquery.dataTables.min.css"></script>
+  <script src="../assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
+  <script src="../assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
+  <script src="././assets/js/material-kit.js?v=2.0.6" type="text/javascript"></script>
 </head>
 

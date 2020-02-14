@@ -28,24 +28,23 @@ include_once("../head.php");
         <div class="card shadow mb-4">
             <div class="card-body">
                 <div class="card-header py-3">
-                    <form method="POST"> 
-                        <div class="form-group row">
-                            <div class="col-md-2">
-                                <input class="form-control" type="text" placeholder="Artículo" id="search" name="search" onchange="validarSiNumero(this);">    
-                            </div>
-                            <div class="col-md-3">
-                                <button type="submit" style="border: none;"><img src='../assets/img/searchs.png' style='width:40px;height:40px;border:0' title='Buscar'></img></button>
-                                <!-- <button class="btn btn-info " type="submit" onclick="sendRequest();">BUSCAR</button> -->
-                            </div>
-                            </div>   
+                    <form method="POST" class="form-inline ml-auto"> 
+                        
+                        <div class="form-group bmd-form-group">
+                            <input type="text" class="form-control" placeholder="Artículo" id="search" name="search" onchange="validarSiNumero(this);">
                         </div>
+                        <button type="submit" class="btn btn-white btn-raised btn-fab btn-round" tittle='Buscar'>
+                            <i class="material-icons">search</i>
+                        </button>
                         
                     </form> 
             </div>
         </div>
     <div class="row">
-            <div class="col-md-11">
-                <button type="button" class="btn btn-info float-right agregar mb-4"><a href="../vista/agregarArticulo.php" style="color:white!important">AGREGAR</a></button>
+            <div class="col-md-11">    
+                <a href="../vista/agregarArticulo.php" class="btn btn-primary btn-round float-right">
+                    <i class="material-icons">add</i> Agregar
+                </a>
             </div>
         </div>    
    
@@ -87,8 +86,8 @@ include_once("../head.php");
                              <td>".$articulo['S']."</td>
                              <td>".$articulo['B']."</td>
                              <td>".$articulo['V']."</td>
-                             <td><a href='#' onclick='confirmarCancelacion(".$art.")'><img src='../assets/img/cleaner.png' style='width:42px;height:42px;border:0'></img></a></td>
-                             <td><a href='../vista/modificarArticulo.php?codigo=".$articulo['codigo']."&descripcion=".$articulo['descripcion']."&eje=".$articulo['eje']."&aloj=".$articulo['aloj']."&esp=".$articulo['esp']."&form=".$articulo['form']."&giro=".$articulo['giro']."&G=".$articulo['G']."&S=".$articulo['S']."&B=".$articulo['B']."&V=".$articulo['V']."'><img src='../assets/img/modify.png' style='width:42px;height:42px;border:0'></img></a></td>                           
+                             <td><a href='#' onclick='confirmarCancelacion(".$art.")' class='btn btn-primary btn-raised btn-fab btn-round'><i class='material-icons'>delete</i></a></td>
+                             <td><a href='../vista/modificarArticulo.php?codigo=".$articulo['codigo']."&descripcion=".$articulo['descripcion']."&eje=".$articulo['eje']."&aloj=".$articulo['aloj']."&esp=".$articulo['esp']."&form=".$articulo['form']."&giro=".$articulo['giro']."&G=".$articulo['G']."&S=".$articulo['S']."&B=".$articulo['B']."&V=".$articulo['V']."' class='btn btn-primary btn-raised btn-fab btn-round' ><i class='material-icons'>edit</i></a></td>                           
                          </tr>";
                     }
                 ?>

@@ -5,23 +5,22 @@
 include_once("../head.php");
 ?>
 <body>
-
-	<div class="container"  id="aImprimir" >
-		<div class="row">
-			<div class="col-md-6 offset-4">
-				<br>
-				<h1>Repuesto del automotor</h1>
+<div class="section">
+<div class="row">
+			<div class="col-md-6 offset-2">
+				<div class="tim-typo">
+					<h2 class="title">Repuesto del automotor</h2>
+				</div>
 			</div>
 		</div>
-		<br><br>
+	
+	<div class="container tim-container"  id="aImprimir">
 		<div class="row">
-			<div class="col-md-12">
-				<div class="separador"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4 offset-5">
-				<h3>Presupuesto<h3>
+			<div class="col-md-4 offset-4">
+				<div class="tim-typo">
+				<h3 class="title">Presupuesto</h3>
+				</div>
+				<!-- <h3>Presupuesto<h3> -->
 			</div>
 		</div>
 		<div class="row">
@@ -96,7 +95,8 @@ include_once("../head.php");
 						<?php
                             require_once("../conexion.php");
                             $conn = getConexion();
-                            $sql2 = "SELECT DISTINCT codigo, tipo, descripcion, precio, cantidad from tmp";
+							// $sql2 = "SELECT DISTINCT codigo, tipo, descripcion, precio, cantidad from tmp";
+							$sql2 = "SELECT codigo, tipo, descripcion, precio, sum(cantidad) as cantidad from tmp GROUP BY codigo, tipo ";
                             $result = mysqli_query($conn, $sql2);
                             $listas=Array();
                             
@@ -134,11 +134,7 @@ include_once("../head.php");
 				<br>
 				
 				</table>
-				<div class="row">
-					<div class="col-md-12">
-						<div class="separador"></div>
-					</div>
-				</div>
+			
 				<br>
 				<div class="row" style="font-size: 12px;">
 				<div class="col-md-8">
@@ -149,94 +145,114 @@ include_once("../head.php");
 				<div class="col-md-4" style="font-size: 12px;">
 					
 					<?php
-						echo "<div class='row'>
-									<div class='col-md-8' >
-										<label style='float:right;'>SubTotal: $</label>
-									</div>
-									<div class='col-md-4'>	
-										<label>".$total."</label><input class='form-control' type='text' name='total' id='total' value= '".$total."' hidden='hidden'>
-									</div>
-								</div>
-								<div class='row'>
-									<div class='col-md-8'>
-										<label style='float:right;'>Descuento: $</label>
-									</div>
-									<div class='col-md-4'>
-										<input class='form-control' type='text' name='descuento' id='descuento' >	
+						echo "<div class='form-group bmd-form-group'>
+									<div class='input-group' >
+										<div class='input-group-prepend'>
+											<span class='input-group-text'>
+												<label>SubTotal: $</label>
+											</span>
+										</div>
+										<label>".$total."</label>
+										<input class='form-control' type='text' name='total' id='total' value= '".$total."' hidden='hidden'>
 									</div>
 								</div>
-								<div class='row'>
-									<div class='col-md-8'>
-										<label style='float:right;'>Total Bonificado: $</label>
+
+
+								<div class='form-group bmd-form-group'>
+								<div class='input-group'>
+									<div class='input-group-prepend'>
+										<span class='input-group-text'>
+											<label>Descuento: $</label>
+										</span>
 									</div>
-									<div class='col-md-4'>
-										<input class='form-control' type='text' name='conDescuento' id='conDescuento'>	
+									<input type='text' class='form-control' name='descuento' id='descuento'>
+								</div>
+								</div>
+								<div class='form-group bmd-form-group'>
+								<div class='input-group'>
+									<div class='input-group-prepend'>
+										<span class='input-group-text'>
+										<label>Total Bonificado: $</label>
+										</span>
 									</div>
+									<input type='text' class='form-control' name='conDescuento' id='conDescuento'>
+								</div>
 								</div>"	;
 					?>	
 				</form>
 				</div>
 				</div>
-					<br>
-					<div class="row">
-						<div class="col-md-12">
-						<div class="separador"></div>
-						</div>
-					</div>
-					<br>
+					
 				<div class="FormaDePago">
-					<div class="row" style="font-size: 12px;">
-						<p>Forma de pago: Cheque pago diferido 7 días fecha factura.
+					<div class="row" style="font-size: 12px;"> 
+                              
+					<div class="col-lg-12 col-md-4 col-sm-6">
+						<div class="title">
+							<h4>Forma de pago</h4>
+							<p>*Cheque pago diferido 7 días fecha factura.
 						Transcurrido dicho plazo, se ajustará de acuerdo al valor del dólar estaunidense, tipo
 						vendedor Banco Nación del día anterior al del efectivo pago.-</p>
+						</div>
+						<div class="form-check form-check-inline">
+							<label class="form-check-label">
+							<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" onclick="uncheckRadio(this);">EFECTIVO
+							<span class="circle">
+								<span class="check"></span>
+							</span>
+							</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<label class="form-check-label">
+							<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2" onclick="uncheckRadio(this);"> CHEQUE
+							<span class="circle">
+								<span class="check"></span>
+							</span>
+							</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<label class="form-check-label">
+							<input class="form-check-input" type="radio" name="exampleRadios1" id="exampleRadios11" value="option3" onclick="uncheckRadio(this);" > TARJETA DE CR&EacuteDITO
+							<span class="circle">
+								<span class="check"></span>
+							</span>
+							</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<label class="form-check-label">
+							<input class="form-check-input" type="radio" name="exampleRadio1" id="exampleRadios21" value="option4" onclick="uncheckRadio(this);" > TARJETA DE D&EacuteBITO
+							<span class="circle">
+								<span class="check"></span>
+							</span>
+							</label>
+						</div>
+            	</div> 
+      
+                       
 					</div>
-					<br>
 					
-					<div class="row" style="font-size: 12px;"> 
-                              <div class="col-md-3">
-                                <label for="FormaDePago" class="control-label">Forma de pago:</label>
-                              </div>           
-                              <div class="col-md-9">
-                                  <div class="form-check form-check-inline">
-                                      <input class="form-check-input"  onclick="uncheckRadio(this);" type="radio" name="formaDePago" id="EF" value="EF">
-                                      <label class="form-check-label" for="EF">EFECTIVO</label>
-                                    </div>
-                                    <div class="form-check form-check-inline"> 
-                                      <input class="form-check-input" onclick="uncheckRadio(this);" type="radio" name="formaDePago" id="CH" value="CH">
-                                      <label class="form-check-label" for="CH">CHEQUE</label>
-                                    </div>
-									<div class="form-check form-check-inline"> 
-                                      <input class="form-check-input" onclick="uncheckRadio(this);" type="radio" name="formaDePago" id="TC" value="TC">
-                                      <label class="form-check-label" for="TC">TARJETA DE CR&EacuteDITO</label>
-                                    </div>
-									<div class="form-check form-check-inline"> 
-                                      <input class="form-check-input" onclick="uncheckRadio(this);" type="radio" name="formaDePago" id="TD" value="TD">
-                                      <label class="form-check-label" for="TD">TARJETA DE D&EacuteBITO</label>
-                                    </div>
-                              </div>
-                              
-                            
-                            </div>  
-					</div>
-					<div class="row" style="font-size: 12px;">
+					<!-- <div class="row" style="font-size: 12px;">
 						<div class="col-md-3">
 							<label>Plazo de entrega:</label>
 						</div>
 						<div class="col-md-3">
 							<input class="form-control" type="number" min="0" id="plazo">
 						</div>
-					</div>
+					</div> -->
 					
 				<br><br><br><br><br><br>
-				<input class="btn btn-info float-right agregar pdf" type="button" name="imprimir" value="Imprimir" onclick="imprimir();">
-                 <!-- <button class="btn btn-info float-right agregar"><a href="javascript:getPDF()" style="color:white!important">DESCARGAR</a></button> -->
-				<!-- <input type="hidden" name="hidden_html" id="hidden_html" /> -->
-				<!-- <input type="submit" class="btn btn-primary" id="crearPdf" value="Descargar Pdf"/> -->
-            
-				
-    </div>
+				<!-- <input class="btn btn-info float-right agregar pdf" type="button" name="imprimir" value="Imprimir" onclick="imprimir();">
+                 -->
+				<button class="btn btn-primary btn-round float-right" name="imprimir" value="Imprimir" onclick="imprimir();">
+                	<i class="material-icons">print</i> Imprimir
+              	</button>
+			    <button class="btn btn-danger btn-round float-right pdf" type="button" onclick="confirmarCancelacion()">
+                	<i class="material-icons">reply</i> Volver
+                </button>
+			  
+    <!-- </div>
 	<button class="btn btn-danger float-right agregar pdf"><a onclick='confirmarCancelacion()' style="color:white!important">Cancelar</a></button>            
-        </body>
+       </div>  -->
+	   </body>
 <script>
 function imprimir(){
         var iconos = document.getElementsByClassName("pdf");
@@ -257,7 +273,6 @@ $('#crearPdf').click(function(){
 									$('#hidden_html').val($('#aImprimir').html());
 									$('#make_pdf').submit();
 								});
- 
 });
 
     function crearPdf() {

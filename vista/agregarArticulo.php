@@ -15,7 +15,7 @@ include("../head.php");
                 <table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>Art&acuteculo</th>
+                            <th>Art&iacuteculo</th>
                             <th>Descripci&oacuten</th>
                             <th>Eje</th>
                             <th>Aloj</th>
@@ -46,9 +46,14 @@ include("../head.php");
                 </table>
 
     </div>
-    <button class="btn btn-info float-right agregar" type="submit">AGREGAR</button>
-	
-    </form><button class="btn btn-danger float-right agregar"><a onclick="confirmarCancelacion();" style="color:white!important">CANCELAR</a></button>
+    
+	<button class="btn btn-primary btn-round float-right">
+        <i class="material-icons">done</i> Agregar
+    </button>
+	<a href="#" class="btn btn-danger btn-round float-right pdf" type="button" onclick="confirmarCancelacion()">
+        <i class="material-icons">reply</i> Volver
+    </a>
+    </form>
 </div>
 </body>
 <script>
